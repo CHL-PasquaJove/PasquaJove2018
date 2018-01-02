@@ -1,0 +1,29 @@
+.initial-slide {
+    height: 100%;
+    
+    .main-container {
+        width: 60%;
+        height: 100%;
+        margin-left: 20%;
+        position: absolute;
+        background-color: blue;
+
+        .title-container{
+            width: 100%;
+            background-color: yellow;
+            height: 30%;
+            position: absolute;
+            margin-top: 45%;
+        }
+
+        .arrow-container {
+            height: 70px;
+            width: 50px;
+            left: 50%;
+            margin-left: -25px;
+            background-color: purple;
+            position: absolute;
+            bottom: 20px;
+        }
+    }
+}
