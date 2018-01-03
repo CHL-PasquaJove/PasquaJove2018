@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'breadcrumb',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BreadcrumbComponent implements OnInit {
 
+  @Input() public currentSlide: number;
   constructor() { }
 
   ngOnInit() {

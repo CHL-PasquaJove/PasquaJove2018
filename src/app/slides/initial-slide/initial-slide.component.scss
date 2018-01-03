@@ -1,19 +1,30 @@
 .initial-slide {
     height: 100%;
-    
+    background-image: url('/assets/main-slide-background.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
     .main-container {
         width: 60%;
         height: 100%;
         margin-left: 20%;
         position: absolute;
-        background-color: blue;
 
         .title-container{
             width: 100%;
-            background-color: yellow;
             height: 30%;
             position: absolute;
             margin-top: 45%;
+            text-align: center;
+            label{
+                color: #ffffff;
+                font-family: 'Open Sans';
+                font-weight: 900;
+                font-size: 50px;
+                letter-spacing: -0.6px;
+                text-align: center;
+            }
         }
 
         .arrow-container {
