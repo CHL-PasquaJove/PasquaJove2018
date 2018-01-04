@@ -1,0 +1,40 @@
+@import '~assets/styles/styleColor';
+
+.what-slide {
+    height: 100%;
+    position: relative;
+
+    breadcrumb {
+        position: absolute;
+        height: 100%;
+    }
+
+    .image-container {
+        height: 100%;
+        width: 50%;
+        background-image: url('/assets/images/what-slide-background.jpeg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .init-message {
+            position: absolute;
+            top: 15%;
+            left: calc(50% - 18%);
+            height: 10%;
+            width: 18%;
+            text-align: center;
+
+            label {
+                color: $white-font-color;
+                width: 90%;
+                font-size: 18px;
+                font-weight: normal;
+                font-style: italic;
+                letter-spacing: -0.2px;
+                display: block;
+                margin-left: 5%;
+            }
+        }
+    }
+}

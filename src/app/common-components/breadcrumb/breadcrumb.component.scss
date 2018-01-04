@@ -3,7 +3,7 @@
 .breadcrumb {
     height: 300px;
     width: 100px;
-    position: absolute;
+    position: relative;
     top: 50%;
     margin-top: -150px;
     margin-left: 30px;
@@ -11,7 +11,7 @@
     .list-element {
         opacity: 0.3;
         .square {
-            background-color: $initial-slide-font-color;
+            background-color: $white-font-color;
             height: 5px;
             width: 5px;
             margin-bottom: 1px;
@@ -20,7 +20,7 @@
         }
 
         .slide-name {
-            color: $initial-slide-font-color;
+            color: $white-font-color;
             letter-spacing: -0.1px;
             font-family: 'Open Sans';
             font-size: 10px;
@@ -32,7 +32,7 @@
         }
 
         .line {
-            background-color: $initial-slide-font-color;
+            background-color: $white-font-color;
             width: 2px;
             height: 40px;
             margin-left: 1px;
@@ -43,6 +43,10 @@
             .square { border-radius: 0px; }
             .slide-name { opacity: 1; }
             .line { opacity: 0.3; }
+            &:hover {
+                .square {opacity: 1; }
+                .slide-name { opacity: 1; }
+            }
         }
         &:hover {
             opacity: 1;

@@ -1,0 +1,22 @@
+@import '~assets/styles/styleColor';
+
+.header {
+    margin-top: 20px;
+    position: absolute;
+    margin-left: 20px;
+
+    .main-title {
+        font-size: 15px;
+        letter-spacing: -0.2px;
+        color: $white-font-color;
+        font-weight: 900;
+    }
+
+    .lema {
+        margin-left: 5px;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: normal;
+        color: $white-font-color;
+    }
+}

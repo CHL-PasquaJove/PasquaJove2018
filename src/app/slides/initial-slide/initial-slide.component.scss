@@ -7,6 +7,11 @@
     background-size: cover;
     background-repeat: no-repeat;
 
+    breadcrumb {
+        position: absolute;
+        height: 100%;
+    }
+
     .main-container {
         width: 60%;
         height: 100%;
@@ -20,7 +25,7 @@
             margin-top: 40%;
             text-align: center;
             .main-title {
-                color: $initial-slide-font-color;
+                color: $white-font-color;
                 font-family: 'Open Sans';
                 font-weight: 900;
                 font-size: 50px;
@@ -29,7 +34,7 @@
                 display: block;
             }
             .lema {
-                color: $initial-slide-font-color;
+                color: $white-font-color;
                 font-family: 'Open Sans';
                 font-size: 25px;
                 font-weight: normal;
@@ -48,7 +53,7 @@
             bottom: 80px;
             margin-left: 10%;
             .message {
-                color: $initial-slide-font-color;
+                color: $white-font-color;
                 font-size: 15px;
                 letter-spacing: -0.1px;
                 font-family: 'Open Sans';
