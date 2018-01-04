@@ -1,9 +1,54 @@
+@import '~assets/styles/styleColor';
+
 .breadcrumb {
     height: 300px;
     width: 100px;
-    background-color: white;
     position: absolute;
     top: 50%;
     margin-top: -150px;
-    margin-left: 20px;
+    margin-left: 30px;
+
+    .list-element {
+        opacity: 0.3;
+        .square {
+            background-color: $initial-slide-font-color;
+            height: 5px;
+            width: 5px;
+            margin-bottom: 1px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .slide-name {
+            color: $initial-slide-font-color;
+            letter-spacing: -0.1px;
+            font-family: 'Open Sans';
+            font-size: 10px;
+            margin-left: 10px;
+            font-weight: 600;
+            opacity: 0;
+            position: absolute;
+            margin-top: 5px;
+        }
+
+        .line {
+            background-color: $initial-slide-font-color;
+            width: 2px;
+            height: 40px;
+            margin-left: 1px;
+        }
+
+        &.active {
+            opacity: 1;
+            .square { border-radius: 0px; }
+            .slide-name { opacity: 1; }
+            .line { opacity: 0.3; }
+        }
+        &:hover {
+            opacity: 1;
+            .square { opacity: 0.3; }
+            .slide-name { opacity: 0.5; }
+            .line { opacity: 0.3; }
+        }
+    }
 }
