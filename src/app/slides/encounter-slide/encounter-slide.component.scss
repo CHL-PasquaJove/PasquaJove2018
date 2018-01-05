@@ -1,0 +1,83 @@
+@import '~assets/styles/styleColor';
+
+.encounter-slide {
+    height: 100%;
+    position: relative;
+
+    breadcrumb {
+        position: absolute;
+        height: 100%;
+    }
+
+    .image-container {
+        height: 100%;
+        width: 50%;
+        background-image: url('/assets/images/encounter-slide-background.jpeg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: inline-block;
+
+        .init-message {
+            position: absolute;
+            top: 15%;
+            left: calc(50% - 18% - 15px);
+            height: 10%;
+            width: 18%;
+            text-align: center;
+            margin-right: 15px;
+
+            label {
+                color: $white-font-color;
+                font-size: 18px;
+                font-weight: normal;
+                font-style: italic;
+                letter-spacing: -0.2px;
+            }
+        }
+    }
+
+    .text-container {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        display: inline-block;
+
+        .text-wrapper {
+            width: 100%;
+            height: 40%;
+            position: absolute;
+            top: 35%;
+
+            .title {
+                display: block;
+                color: $dark-blue-font-color;
+                font-size: 20px;
+                font-weight: 900;
+                letter-spacing: -0.2px;
+                font-family: 'Open Sans';
+                padding: 0 20px;
+            }
+
+            p {
+                color: $medium-gray-font-color;
+                font-size: 15px;
+                font-weight: normal;
+                letter-spacing: -0.1px;
+                font-family: 'Open Sans';
+                padding: 0 20px;
+            }
+        }
+
+        .arrow-container {
+            height: 70px;
+            width: 50px;
+            right: 30px;
+            background-color: purple;
+            position: absolute;
+            bottom: 20px;
+            cursor: pointer;
+        }
+    }
+}
