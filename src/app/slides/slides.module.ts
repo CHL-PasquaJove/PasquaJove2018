@@ -4,6 +4,7 @@ import { InitialSlideComponent } from './initial-slide/initial-slide.component';
 import { CommonComponentsModule } from '../common-components/common-components.module';
 import { WhatSlideComponent } from './what-slide/what-slide.component';
 import { EncounterSlideComponent } from './encounter-slide/encounter-slide.component';
+import { ThisEasterSlideComponent } from './this-easter-slide/this-easter-slide.component';
 
 @NgModule({
   imports: [
@@ -13,12 +14,14 @@ import { EncounterSlideComponent } from './encounter-slide/encounter-slide.compo
   declarations: [
     InitialSlideComponent, 
     WhatSlideComponent, 
-    EncounterSlideComponent
+    EncounterSlideComponent, 
+    ThisEasterSlideComponent
   ],
   exports: [
     InitialSlideComponent, 
     WhatSlideComponent, 
-    EncounterSlideComponent
+    EncounterSlideComponent,
+    ThisEasterSlideComponent
   ]
 })
 export class SlidesModule { }
