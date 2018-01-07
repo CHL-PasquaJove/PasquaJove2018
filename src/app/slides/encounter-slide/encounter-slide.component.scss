@@ -69,6 +69,44 @@
                 font-family: 'Open Sans';
                 padding: 0 20px;
             }
+
+            .quotes-container {
+                width: 100%;
+                
+                .quote {
+                    width: 80%;
+                    margin-left: 10%;
+                    position: relative;
+                    margin-top: 20px;
+
+                    .quote-message  {
+                        font-size: 15px;
+                        font-style: italic;
+                        letter-spacing: -0.1px;
+                        font-weight: normal;
+                        color: $medium-gray-blue-font-color;
+                        display: block;
+                        margin-bottom: 5px;
+                    }
+
+                    .quote-owner {
+                        font-size: 12px;
+                        font-weight: bold;
+                        letter-spacing: -0.1px;
+                        font-style: normal;
+                        margin-right: 3px;
+                        color: $dark-blue-font-color;
+                    }
+
+                    .owner-age {
+                        font-size: 12px;
+                        font-weight: normal;
+                        letter-spacing: -0.1px;
+                        font-style: normal;
+                        color: $dark-blue-font-color;
+                    }
+                }
+            }
         }
 
         .arrow-container {
