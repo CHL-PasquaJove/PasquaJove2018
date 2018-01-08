@@ -69,16 +69,70 @@
                 font-family: 'Open Sans';
                 padding: 0 20px;
             }
+
+            .info-container {
+                width: 80%;
+                margin-left: 10%;
+
+                .label-container {
+                    position: relative;
+                    margin-top: 10px;
+
+                    .info-label {
+                        font-weight: bold;
+                        color: $dark-blue-font-color;
+                        letter-spacing: -0.1px;
+                        font-size: 15px;
+                    }
+
+                    .info-value {
+                        margin-left: 3px;
+                        font-weight: normal;
+                        color: $medium-gray-font-color;
+                        font-size: 15px;
+                        letter-spacing: -0.1px;
+
+                        &.link {
+                            color: $medium-gray-blue-font-color;
+                            cursor: pointer;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+
+                        &.address {
+                            display: block;
+                            margin-left: 0px;
+                        }
+                    }
+                }
+            }
         }
 
         .arrow-container {
             height: 70px;
             width: 50px;
-            right: 30px;
-            background-color: purple;
+            right: 20px;
+            margin-left: -25px;
             position: absolute;
-            bottom: 20px;
+            bottom: 0px;
             cursor: pointer;
+            text-align: center;
+
+            .arrow-text {
+                font-size: 10px;
+                display: block;
+                color: $medium-gray-font-color;
+                margin-top: 10px;
+            }
+
+            .arrow-icon {
+                height: 30px;
+                width: 100%;
+                display: block;
+                position: relative;
+                margin-top: 5px;
+            }
         }
     }
 }

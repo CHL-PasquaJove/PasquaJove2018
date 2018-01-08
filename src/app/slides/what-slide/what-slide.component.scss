@@ -74,11 +74,27 @@
         .arrow-container {
             height: 70px;
             width: 50px;
-            right: 30px;
-            background-color: purple;
+            right: 20px;
+            margin-left: -25px;
             position: absolute;
-            bottom: 20px;
+            bottom: 0px;
             cursor: pointer;
+            text-align: center;
+
+            .arrow-text {
+                font-size: 10px;
+                display: block;
+                color: $medium-gray-font-color;
+                margin-top: 10px;
+            }
+
+            .arrow-icon {
+                height: 30px;
+                width: 100%;
+                display: block;
+                position: relative;
+                margin-top: 5px;
+            }
         }
     }
 }

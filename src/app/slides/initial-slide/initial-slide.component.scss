@@ -65,10 +65,25 @@
             width: 50px;
             left: 50%;
             margin-left: -25px;
-            background-color: purple;
             position: absolute;
-            bottom: 20px;
+            bottom: 0px;
             cursor: pointer;
+            text-align: center;
+
+            .arrow-text {
+                font-size: 10px;
+                display: block;
+                color: $medium-gray-font-color;
+                margin-top: 10px;
+            }
+
+            .arrow-icon {
+                height: 30px;
+                width: 100%;
+                display: block;
+                position: relative;
+                margin-top: 5px;
+            }
         }
     }
 }
