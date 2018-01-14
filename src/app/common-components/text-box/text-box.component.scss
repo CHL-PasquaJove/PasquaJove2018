@@ -1,0 +1,31 @@
+@import '~assets/styles/styleColor';
+
+.text-box {
+    width: 70%;
+    .arrow {
+        height: 0;
+        width: 0;
+        border-bottom: 4px solid $medium-gray-blue-font-color;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        margin-left: 10px;
+    }
+    .box {
+        border-top: 3px solid $medium-gray-blue-font-color;
+        background-color: $background-box-gray;
+        height: 40px;
+        .note {
+            font-size: 12px;
+            letter-spacing: -0.1px;
+            font-weight: normal;
+            color: $text-box-note-font-color;
+            a {
+                color: $medium-gray-blue-font-color;
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

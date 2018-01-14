@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-import { HeaderComponent } from './header/header/header.component';
+import { HeaderComponent } from './header/header.component';
+import { TextBoxComponent } from './text-box/text-box.component';
 
 @NgModule({
   imports: [
@@ -9,11 +10,13 @@ import { HeaderComponent } from './header/header/header.component';
   ],
   declarations: [
     BreadcrumbComponent,
-    HeaderComponent
+    HeaderComponent,
+    TextBoxComponent
   ],
   exports: [
     BreadcrumbComponent,
-    HeaderComponent
+    HeaderComponent,
+    TextBoxComponent
   ]
 })
 export class CommonComponentsModule { }
