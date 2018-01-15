@@ -24,10 +24,14 @@
             <label class="info-label">Edades:</label>
             <label class="info-value">Hasta los 15 años</label>
           </div>
+          <text-box [messageText]="'Si eres menor necesitarás traer <a>nuestra autorización</a> 
+            rellenada y firmada'"></text-box>
           <div class="label-container">
             <label class="info-label">Precio:</label>
             <label class="info-value">100€</label>
           </div>
+          <text-box [messageText]="'Si vienes con tu hermano, o hermanos, todos recibiréis 
+            un descuento de 15€'"></text-box>
           <div class="label-container">
             <label class="info-label">Dónde:</label>
             <label class="info-value"><a>Casa de colonias La Conrería</a></label>
@@ -38,6 +42,11 @@
               <label class="info-value">Para inscribirte necesitarás rellenar <a>el formulario</a>, que encontrarás en la siguiente sección, y realizar los pagos según se explica en el documento que te enviaremos cuando te inscribas.</label>
             </div>
         </div>
+      </div>
+      <div class="footer-container">
+        <div class="line-separator"></div>
+        <label>Aquí puedes encontrar la documentación  de la Pascua con toda la información:</label>
+        <button>DESCARGA EL DOCUMENTO</button>
       </div>
       <div class="arrow-container" onClick="document.getElementById('join-contact').scrollIntoView({block: 'end', behavior: 'smooth'});">
         <span class="arrow-text">SCROLL</span>

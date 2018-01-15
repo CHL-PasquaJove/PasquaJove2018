@@ -71,8 +71,8 @@
             }
 
             .info-container {
-                width: 80%;
-                margin-left: 10%;
+                width: 90%;
+                margin-left: 5%;
 
                 .label-container {
                     position: relative;
@@ -105,6 +105,41 @@
                             margin-left: 0px;
                         }
                     }
+                }
+                
+                
+            }
+        }
+
+        .footer-container {
+            position: absolute;
+            bottom: 10px;
+            width: 80%;
+            padding-left: 20px;
+            .line-separator {
+                height: 1px;
+                background-color: $medium-gray-blue-font-color;
+                width: 90px;
+            }
+            label {
+                margin-top: 5px;
+                display: block;
+                font-size: 15px;
+                letter-spacing: -0.1px;
+                color: $medium-gray-font-color;
+            }
+            button {
+                margin-top: 5px;
+                height: 25px;
+                width: 175px;
+                border-radius: 20px;
+                background-color: $medium-gray-blue-font-color;
+                color: $white-font-color;
+                border: none;
+                cursor: pointer;
+                font-size: 10px;
+                &:hover{
+                    background-color: $medium-gray-blue-button-hover;
                 }
             }
         }

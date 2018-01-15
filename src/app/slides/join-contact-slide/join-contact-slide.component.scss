@@ -1,0 +1,23 @@
+@import '~assets/styles/styleColor';
+
+.join-contact-slide{
+    height: 100%;
+    position: relative;
+
+    .header-container {
+        height: 200px;
+        width: 100%;
+        background-image: url('/assets/images/forms-slide-background.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .footer-container {
+        height: 250px;
+        background-color: $background-box-gray;
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+    }
+}
