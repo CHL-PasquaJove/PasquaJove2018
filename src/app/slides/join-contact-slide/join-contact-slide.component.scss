@@ -3,6 +3,12 @@
 .join-contact-slide{
     height: 100%;
     position: relative;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
 
     .header-container {
         height: 200px;
@@ -11,19 +17,54 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+    }
+
+    .forms-container {
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        .join-form {
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex: 1 0 auto;
+            -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+            background-color: red;
+        }
+        .forms-separator {
+            width: 50px;
+        }
+        .contact-form {
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex: 1 0 auto;
+            -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+            background-color: blue;
+        }
     }
 
     .footer-container {
         height: 250px;
         background-color: $background-box-gray;
-        bottom: 0;
+        // bottom: 0;
         width: 100%;
-        position: absolute;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
         .horizontal-breadcrumb{
             width: 100%;
             text-align: center;
-            line-height: 60px;
-            height: 60px;
+            line-height: 50px;
+            height: 50px;
             .breadcrumb-step {
                 font-weight: bold;
                 font-size: 10px;
@@ -31,6 +72,7 @@
                 color: $text-box-note-font-color;
                 &:hover {
                     cursor: pointer;
+                    color: $medium-gray-blue-font-color;
                 }
             }
             .line-separator {
@@ -42,6 +84,22 @@
             }
         }
         .follow-container{
+            text-align: center;
+            line-height: 30px;
+            height: 30px;
+            color: $text-box-note-font-color;
+            span {
+                letter-spacing: -0.1px;
+                font-size: 15px;
+            }
+            .instagram,
+            .facebook {
+                height: 12px;
+                cursor: pointer;
+                &:hover path {
+                    cursor: pointer;
+                }
+            }
         }
         .bottom-footer {
             .organized-by {
