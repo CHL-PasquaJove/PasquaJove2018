@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JoinContactSlideComponent implements OnInit {
 
+  public openJoinForm: boolean = false;
+  public openContactForm: boolean = false;
+
   constructor() { }
 
   ngOnInit() {

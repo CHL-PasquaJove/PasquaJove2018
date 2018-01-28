@@ -5,17 +5,45 @@
   
   <div class="forms-container">
     <div class="join-form">
-      <span class="form-title">INSCRÍBETE</span>
-      <span class="form-message">Rellena nuestro formulario para poder formar parte de la Pascua Joven XXII</span>
+      <div class="collapsed-join-jorm" *ngIf="openJoinForm===false && openContactForm===false">
+        <span class="form-title" (click)="openJoinForm=true">INSCRÍBETE</span>
+        <span class="form-message" (click)="openJoinForm=true">Rellena nuestro formulario para poder formar parte de la Pascua Joven XXII</span>
+      </div>
+      <div class="expanded-join-form" *ngIf="openJoinForm">
+        <form>
+          <span>INSCRÍBETE</span>
+          <div class="form-row">
+            <input placeholder="Nombre">
+            <input placeholder="Apellidos">
+          </div>
+          <div class="form-row">
+
+          </div>
+          <div class="form-row">
+              <input placeholder="Correo electrónico">
+              <input placeholder="Teléfono de contacto">
+          </div>
+          <div class="form-row">
+              <input placeholder="Grupo o movimiendo de contacto">
+              <input placeholder="¿Quien te ha invitado?">
+          </div>
+          <div class="form-row">
+            <textarea placeholder="Si tienes algún problema de salud, con la comida o algo que crees que
+            tengamos que tener en cuenta, explícanoslo por favor."></textarea>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="forms-separator">
+    <div class="forms-separator" *ngIf="openJoinForm===false && openContactForm===false">
       <div class="divider"></div>
       <span>o</span>
       <div class="divider"></div>
     </div>
     <div class="contact-form">
-      <span class="form-title">CONTÁCTANOS</span>
-      <span class="form-message">Pregúntanos sobre aquello que necesites saber y nos pondremos en contacto contigo</span>
+      <div class="collapsed-contact-form" *ngIf="openJoinForm===false && openContactForm===false">
+        <span class="form-title" (click)="openContactForm=true">CONTÁCTANOS</span>
+        <span class="form-message" (click)="openContactForm=true">Pregúntanos sobre aquello que necesites saber y nos pondremos en contacto contigo</span>
+      </div>
     </div>
   </div>
 
