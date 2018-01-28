@@ -4,20 +4,23 @@
   </div>
   
   <div class="forms-container">
-    <div class="join-form">
+    <div class="join-form" [ngClass]="{'hidden-join-form':openContactForm}">
       <div class="collapsed-join-jorm" *ngIf="openJoinForm===false && openContactForm===false">
         <span class="form-title" (click)="openJoinForm=true">INSCRÍBETE</span>
         <span class="form-message" (click)="openJoinForm=true">Rellena nuestro formulario para poder formar parte de la Pascua Joven XXII</span>
       </div>
       <div class="expanded-join-form" *ngIf="openJoinForm">
-        <form>
-          <span>INSCRÍBETE</span>
+        <form class="join-form-fields">
+          <span class="title">INSCRÍBETE</span>
           <div class="form-row">
             <input placeholder="Nombre">
             <input placeholder="Apellidos">
           </div>
           <div class="form-row">
-
+            <label>Fecha de nacimiento</label>
+            <select></select>
+            <select></select>
+            <select></select>
           </div>
           <div class="form-row">
               <input placeholder="Correo electrónico">
@@ -29,8 +32,9 @@
           </div>
           <div class="form-row">
             <textarea placeholder="Si tienes algún problema de salud, con la comida o algo que crees que
-            tengamos que tener en cuenta, explícanoslo por favor."></textarea>
+            tengamos que tener en cuenta, explícanoslo por favor." ></textarea>
           </div>
+          <button [disabled]=true>Envía el formulario</button>
         </form>
       </div>
     </div>
@@ -39,7 +43,7 @@
       <span>o</span>
       <div class="divider"></div>
     </div>
-    <div class="contact-form">
+    <div class="contact-form" [ngClass]="{'hidden-contact-form':openJoinForm}">
       <div class="collapsed-contact-form" *ngIf="openJoinForm===false && openContactForm===false">
         <span class="form-title" (click)="openContactForm=true">CONTÁCTANOS</span>
         <span class="form-message" (click)="openContactForm=true">Pregúntanos sobre aquello que necesites saber y nos pondremos en contacto contigo</span>

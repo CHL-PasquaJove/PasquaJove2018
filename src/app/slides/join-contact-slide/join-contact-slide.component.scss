@@ -40,6 +40,9 @@
             text-align: center;
             justify-content: center;
             color: $text-box-note-font-color;
+            &.hidden-join-form {
+                flex: 0;
+            }
             span{
                 display: block;
                 padding: 0 20px;
@@ -54,6 +57,33 @@
                 font-size: 15px;
                 font-weight: normal;
                 letter-spacing: -0.1px;
+            }
+            .expanded-join-form{
+                .title {
+                    color: $medium-gray-blue-font-color;
+                    font-size: 20px;
+                    font-weight: bold;
+                    letter-spacing: -0.1px;
+                }
+                .form-row {
+                    margin-top: 10px;
+                    input {
+                        height: 40px;
+                        width: 300px;
+                        padding: 5px;
+                        box-sizing: border-box;
+                        + input {
+                            margin-left: 20px;
+                        }
+                    }
+                    label {
+                        color: $medium-gray-blue-font-color;
+                        display: block;
+                    }
+                    textarea {
+                        resize: none;
+                    }
+                }
             }
         }
         .forms-separator {
@@ -86,6 +116,9 @@
             text-align: center;
             justify-content: center;
             color: $text-box-note-font-color;
+            &.hidden-contact-form {
+                flex: 0;
+            }
             span{
                 display: block;
                 padding: 0 20px;
