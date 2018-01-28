@@ -36,10 +36,44 @@
             -webkit-flex: 1 0 auto;
             -ms-flex: 1 0 auto;
             flex: 1 0 auto;
-            background-color: red;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            color: $text-box-note-font-color;
+            span{
+                display: block;
+                padding: 0 20px;
+                cursor: pointer;
+            }
+            .form-title {
+                font-size: 20px;
+                font-weight: 900;
+                letter-spacing: -0.2px;
+            }
+            .form-message {
+                font-size: 15px;
+                font-weight: normal;
+                letter-spacing: -0.1px;
+            }
         }
         .forms-separator {
             width: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .divider {
+                width: 2px;
+                margin: 0 auto;
+                height: 25px;
+                background-color: $medium-gray-blue-font-color;
+            }
+            span {
+                font-size: 25px;
+                font-weight: 900;
+                color: $text-box-note-font-color;
+                display: block;
+                text-align: center;
+            }
         }
         .contact-form {
             display: -ms-flexbox;
@@ -48,7 +82,25 @@
             -webkit-flex: 1 0 auto;
             -ms-flex: 1 0 auto;
             flex: 1 0 auto;
-            background-color: blue;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            color: $text-box-note-font-color;
+            span{
+                display: block;
+                padding: 0 20px;
+                cursor: pointer;
+            }
+            .form-title {
+                font-size: 20px;
+                font-weight: 900;
+                letter-spacing: -0.2px;
+            }
+            .form-message {
+                font-size: 15px;
+                font-weight: normal;
+                letter-spacing: -0.1px;
+            }
         }
     }
 
