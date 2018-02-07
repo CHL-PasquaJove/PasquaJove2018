@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
 import { SlidesModule } from './slides/slides.module';
+import { UserService } from './api/user.service';
 
 
 @NgModule({
@@ -12,9 +14,11 @@ import { SlidesModule } from './slides/slides.module';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+
     SlidesModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
