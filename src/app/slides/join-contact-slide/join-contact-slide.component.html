@@ -10,31 +10,37 @@
         <span class="form-message" (click)="openJoinForm=true">Rellena nuestro formulario para poder formar parte de la Pascua Joven XXII</span>
       </div>
       <div class="expanded-join-form" *ngIf="openJoinForm">
-        <form class="join-form-fields">
+        <form [formGroup]="userForm" class="join-form-fields" (ngSubmit)="onSubmitForm(userForm.value)">
           <span class="title">INSCRÍBETE</span>
           <div class="form-row">
-            <input placeholder="Nombre">
-            <input placeholder="Apellidos">
+            <input placeholder="Nombre" formControlName="name">
+            <input placeholder="Apellidos" formControlName="surname">
           </div>
-          <div class="form-row">
+          <div class="form-row" formGroupName="birth">
             <label>Fecha de nacimiento</label>
-            <select></select>
-            <select></select>
-            <select></select>
+            <select formControlName="day">
+              <option *ngFor="let d of days">{{d}}</option>
+            </select>
+            <select (change)="refreshDays()" formControlName="month">
+              <option *ngFor="let m of months">{{m}}</option>
+            </select>
+            <select (change)="refreshDays()" formControlName="year">
+              <option *ngFor="let y of years">{{y}}</option>
+            </select>
           </div>
           <div class="form-row">
-              <input placeholder="Correo electrónico">
-              <input placeholder="Teléfono de contacto">
+              <input placeholder="Correo electrónico"  formControlName="email">
+              <input placeholder="Teléfono de contacto"  formControlName="phone">
           </div>
           <div class="form-row">
-              <input placeholder="Grupo o movimiendo de contacto">
-              <input placeholder="¿Quien te ha invitado?">
+              <input placeholder="Grupo o movimiendo de contacto"  formControlName="group">
+              <input placeholder="¿Quien te ha invitado?"  formControlName="invitedBy">
           </div>
           <div class="form-row">
             <textarea placeholder="Si tienes algún problema de salud, con la comida o algo que crees que
             tengamos que tener en cuenta, explícanoslo por favor." ></textarea>
           </div>
-          <button [disabled]=true>Envía el formulario</button>
+          <button [disabled]="!userForm.valid">Envía el formulario</button>
         </form>
       </div>
     </div>

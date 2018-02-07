@@ -11,11 +11,12 @@ export interface ApiUser {
     timestamp?: string;
 
     name: string;
+    surname?: string;
     email: string;
     birth: string;
     phone: string;
-    group: string;
-    food: Array<Food>;
+    group?: string;
+    food?: Array<Food>;
     invitedBy: string;
 }
 
@@ -24,6 +25,7 @@ export class UserModel {
     private _timestamp: ApiDateTime;
 
     public name: string;
+    public surname: string;
     public email: string;
     public birth: ApiDate;
     public phone: string;
@@ -35,10 +37,15 @@ export class UserModel {
 
     public fromApi(data: ApiUser): this {
 
-        this._id = data._id;
-        this._timestamp = new ApiDateTime().fromApi(data.timestamp);
+        if (data._id) {
+            this._id = data._id;
+        }
+        if (data.timestamp) {
+            this._timestamp = new ApiDateTime().fromApi(data.timestamp);
+        }
 
         this.name = data.name;
+        this.surname = data.surname;
         this.email = data.email;
         this.birth = new ApiDate().fromApi(data.birth);
         this.phone = data.phone;
@@ -55,6 +62,7 @@ export class UserModel {
             timestamp: this._timestamp.toApi(),
 
             name: this.name,
+            surname: this.surname,
             email: this.email,
             birth: this.birth.toApi(),
             phone: this.phone,
