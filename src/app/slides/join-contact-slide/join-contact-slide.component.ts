@@ -23,31 +23,18 @@ export class JoinContactSlideComponent implements OnInit {
   public user: UserModel;
 
   public userForm: FormGroup;
+  public contactForm: FormGroup;
 
   constructor(private userService: UserService) {
   }
 
   ngOnInit() {
     // Default User
-    this.userForm = new FormGroup({
-      name: new FormControl('', Validators.required),
-      surname: new FormControl(''),
-      birth: new FormGroup({
-        day: new FormControl(1),
-        month: new FormControl(1),
-        year: new FormControl(2001)
-      }),
-      email: new FormControl('', Validators.required),
-      phone: new FormControl('', Validators.required),
-      invitedBy: new FormControl('', Validators.required),
-      group: new FormControl('')
-    });
-
+    this.initializeDefaultUser();
     // Init date combos
-    this.years = this.range(JoinContactSlideComponent.MIN_YEAR,
-                            JoinContactSlideComponent.MAX_YEAR, false);
-    this.months = this.range(1, 12);
-    this.refreshDays();
+    this.initializeDateCombos();
+    // Default Contact
+    this.initializeDefaultContact();
   }
 
   public get birth() {
@@ -84,5 +71,38 @@ export class JoinContactSlideComponent implements OnInit {
     this.userService
       .newUser(user)
       .subscribe(() => console.log('User registered'));
+  }
+
+  public onSubmitContactForm(value): void {
+
+  }
+
+  private initializeDefaultUser(): void {
+    this.userForm = new FormGroup({
+      name: new FormControl('', Validators.required),
+      surname: new FormControl(''),
+      birth: new FormGroup({
+        day: new FormControl(1),
+        month: new FormControl(1),
+        year: new FormControl(2001)
+      }),
+      email: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required),
+      invitedBy: new FormControl('', Validators.required),
+      group: new FormControl('')
+    });
+  }
+
+  private initializeDateCombos(): void {
+    this.years = this.range(JoinContactSlideComponent.MIN_YEAR,
+      JoinContactSlideComponent.MAX_YEAR, false);
+    this.months = this.range(1, 12);
+    this.refreshDays();
+  }
+
+  private initializeDefaultContact(): void {
+    this.contactForm = new FormGroup({
+      contactName: new FormControl('', Validators.required)
+    });
   }
 }
