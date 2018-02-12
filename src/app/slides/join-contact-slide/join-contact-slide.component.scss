@@ -77,94 +77,6 @@
                 display: flex;
                 margin: 15px auto;
                 overflow: auto;
-                .join-form-fields,
-                .contact-form-fields {
-                    position: relative;
-                    margin: 0 auto;
-                    .title {
-                        color: $dark-blue-font-color;
-                        font-size: 20px;
-                        font-weight: bold;
-                        letter-spacing: -0.1px;
-                        padding-bottom: 10px;
-                    }
-                    .navigation-button {
-                        position: absolute;
-                        top: 5px;
-                        border: none;
-                        background-color: transparent;
-                        color: $text-box-note-font-color;
-                        font-size: 11px;
-                        font-weight: bold;
-                        right: 0px;
-                        cursor: pointer;
-                        i {
-                            font-weight: normal;
-                        }
-                        &:hover {
-                            color: $dark-blue-font-color;
-                        }
-                    }
-                    .form-row {
-                        display: flex;
-                        margin-top: 10px;
-                        &.birthday-row {
-                            flex-direction: column;
-                            label {
-                                text-align: left;
-                            }
-                            div {
-                                display: flex;
-                                select {
-                                    margin-right: 10px;
-                                    height: 40px;
-                                    width: 90px;
-                                    padding: 5px 10px;
-                                    &.select-year {
-                                        width: 100px;
-                                        margin-right: 0px;
-                                    }
-                                }
-                            }
-                        }
-                        input {
-                            height: 40px;
-                            width: 300px;
-                            padding: 5px;
-                            box-sizing: border-box;
-                            color: $dark-blue-font-color;
-                            + input {
-                                margin-left: 20px;
-                            }
-                        }
-                        label {
-                            color: $medium-gray-blue-font-color;
-                            display: block;
-                        }
-                        textarea {
-                            resize: none;
-                            width: 100%;
-                            height: 100px;
-                            text-align: left;
-                            padding: 5px;
-                        }
-                    }
-                    .register-button {
-                        margin-top: 20px;
-                        border: none;
-                        border-radius: 20px;
-                        width: 200px;
-                        height: 35px;
-                        background-color: $medium-gray-blue-font-color;
-                        color: white;
-                        cursor: pointer;
-                        &:disabled {
-                            background-color: $disabled-form-button;
-                            color: $form-button-disabled-text-color;
-                            cursor: not-allowed;
-                        }
-                    }
-                }
             }
         }
         .forms-separator {
@@ -189,19 +101,6 @@
         .contact-form {
             &.hidden-contact-form {
                 flex: 0;
-            }
-            .expanded-contact-form {
-                .contact-form-fields {
-                   
-                    .navigation-button {
-                        left: 0px;
-                    }
-                    .form-row {
-                        textarea {
-                            width: 600px;
-                        }
-                    }
-                }
             }
         }
     }

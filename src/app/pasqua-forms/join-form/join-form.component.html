@@ -1,0 +1,40 @@
+<form [formGroup]="userForm" class="form-fields" (ngSubmit)="onSubmitForm(userForm.value)">
+  <span class="title">INSCRÍBETE</span>
+  <button class="navigation-button" type="button" (click)="toContacts.emit()">CONTÁCTANOS
+    <i class="fa fa-chevron-right"></i>
+  </button>
+  <div class="form-row">
+    <input placeholder="Nombre*" formControlName="name">
+    <input placeholder="Apellidos*" formControlName="surname">
+  </div>
+  <div class="form-row birthday-row" formGroupName="birth">
+    <label>Fecha de nacimiento</label>
+    <div>
+      <select formControlName="day" required>
+        <option [ngValue]="null" disabled [selected]="true">Día*</option>
+        <option *ngFor="let d of days">{{d}}</option>
+      </select>
+      <select (change)="refreshDays()" formControlName="month">
+        <option [ngValue]="null" disabled [selected]="true">Mes*</option>
+        <option *ngFor="let m of months">{{m}}</option>
+      </select>
+      <select (change)="refreshDays()" formControlName="year" class="select-year">
+        <option [ngValue]="null" disabled [selected]="true">Año*</option>
+        <option *ngFor="let y of years">{{y}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+      <input placeholder="Correo electrónico*"  formControlName="email">
+      <input placeholder="Teléfono de contacto*"  formControlName="phone">
+  </div>
+  <div class="form-row">
+      <input placeholder="Grupo o movimiendo de contacto"  formControlName="group">
+      <input placeholder="¿Quien te ha invitado?*"  formControlName="invitedBy">
+  </div>
+  <div class="form-row">
+    <textarea placeholder="Si tienes algún problema de salud, con la comida o algo que crees que tengamos que tener en cuenta, explícanoslo por favor."
+      formControlName="comments"></textarea>
+  </div>
+  <button [disabled]="!canSendForm" class="register-button">Envía el formulario</button>
+</form>

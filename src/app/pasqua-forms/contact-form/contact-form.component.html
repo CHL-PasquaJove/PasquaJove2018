@@ -1,0 +1,14 @@
+<form [formGroup]="contactForm" class="form-fields" (ngSubmit)="onContactForm(contactForm.value)">
+  <span class="title">CONTÁCTANOS</span>
+  <button class="navigation-button left" type="button" (click)="toJoin.emit()">
+    <i class="fa fa-chevron-left"></i>
+    INSCRÍBETE
+  </button>
+  <div class="form-row">
+    <input placeholder="Nombre*" formControlName="name">
+  </div>
+  <div class="form-row">
+    <textarea placeholder="Explicanos que sucede.*" formControlName="comment"></textarea>
+  </div>
+  <button [disabled]="!contactForm.valid" class="register-button">Envía el formulario</button>
+</form>
