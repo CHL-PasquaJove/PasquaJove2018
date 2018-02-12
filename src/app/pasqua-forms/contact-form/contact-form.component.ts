@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { UserService } from '../../api/user.service';
-import { UserModel } from '../../model/user.model';
+import { ContactService } from '../../api/contact.service';
+import { ContactModel, ApiContact } from '../../model/contact.model';
 
 @Component({
   selector: 'contact-form',
@@ -17,7 +17,7 @@ export class ContactFormComponent implements OnInit {
   @Output()
   public toJoin = new EventEmitter();
 
-  constructor(private userService: UserService) { }
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
     // Default Contact
@@ -25,39 +25,42 @@ export class ContactFormComponent implements OnInit {
   }
 
   /* Properties */
+  public get canSendForm() {
+    return this.contactForm.valid && !this.pendingResponse;
+  }
   /* */
 
   /* Methods */
   private initializeDefaultContact(): void {
     this.contactForm = new FormGroup({
       name: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
       comment: new FormControl('', Validators.required)
     });
   }
   /* */
 
   /* Events */
-  public onSubmitForm(value) {
-    const { birth, ...apiUser } = value;
-    apiUser.birth = birth.day + '/' + birth.month + '/' + birth.year;
-    const user = new UserModel().fromApi(apiUser);
+  public onSubmitForm(value: ApiContact) {
+    const contact = new ContactModel().fromApi(value);
 
     this.pendingResponse = true;
-    this.userService
-      .newUser(user)
+    this.contactService
+      .newContact(contact)
       .subscribe(
         (u) => this.onUserRegistered(u),
         (err) => this.onApiError(err)
       );
   }
 
-  public onUserRegistered(user: UserModel) {
+  public onUserRegistered(contact: ContactModel) {
     this.pendingResponse = false;
-    alert(`Registro completado. Se ha enviado un email de confirmación a ${user.email}`);
+    alert(`Mensaje enviado, nos pondremos en contacto tan pronto como sea posible.`);
+    this.contactForm.reset();
   }
 
   public onApiError(err: Response) {
     this.pendingResponse = false;
-    alert(`Ha habido algún error durante el registro. Comprueba que el formulario esta correctamente rellenado.`);
+    alert(`Ha habido algún error durante el envío. Comprueba que el formulario esta correctamente rellenado.`);
   }
 }

@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SlidesModule } from './slides/slides.module';
 import { UserService } from './api/user.service';
+import { ContactService } from './api/contact.service';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { UserService } from './api/user.service';
 
     SlidesModule
   ],
-  providers: [UserService],
+  providers: [UserService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

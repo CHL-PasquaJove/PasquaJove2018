@@ -6,9 +6,10 @@
   </button>
   <div class="form-row">
     <input placeholder="Nombre*" formControlName="name">
+    <input placeholder="Email*" formControlName="email">
   </div>
   <div class="form-row">
     <textarea placeholder="Explicanos que sucede.*" formControlName="comment"></textarea>
   </div>
-  <button [disabled]="!contactForm.valid" class="register-button">Envía el formulario</button>
+  <button [disabled]="!canSendForm" class="register-button">Envía el formulario</button>
 </form>
