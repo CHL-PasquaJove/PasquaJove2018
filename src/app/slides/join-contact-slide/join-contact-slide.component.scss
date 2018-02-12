@@ -147,12 +147,18 @@
                 letter-spacing: -0.1px;
                 font-size: 15px;
             }
-            .instagram,
-            .facebook {
-                height: 12px;
+            .social-network {
                 cursor: pointer;
-                &:hover path {
-                    cursor: pointer;
+                i {
+                    font-weight: bold;
+                }
+
+                &:hover i {
+                    color: $medium-gray-blue-font-color;
+                }
+
+                &:visited {
+                    color: inherit;
                 }
             }
         }
