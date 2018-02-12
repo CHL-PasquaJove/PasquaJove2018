@@ -15,15 +15,15 @@ import { JoinContactSlideComponent } from './join-contact-slide/join-contact-sli
     CommonComponentsModule
   ],
   declarations: [
-    InitialSlideComponent, 
-    WhatSlideComponent, 
-    EncounterSlideComponent, 
-    ThisEasterSlideComponent, 
+    InitialSlideComponent,
+    WhatSlideComponent,
+    EncounterSlideComponent,
+    ThisEasterSlideComponent,
     JoinContactSlideComponent
   ],
   exports: [
-    InitialSlideComponent, 
-    WhatSlideComponent, 
+    InitialSlideComponent,
+    WhatSlideComponent,
     EncounterSlideComponent,
     ThisEasterSlideComponent,
     JoinContactSlideComponent
