@@ -18,6 +18,7 @@ export interface ApiUser {
     group?: string;
     food?: Array<Food>;
     invitedBy: string;
+    comments?: string;
 }
 
 export class UserModel {
@@ -32,6 +33,7 @@ export class UserModel {
     public group: string;
     public food: Array<Food>;
     public invitedBy: string;
+    public comments?: string;
 
     public constructor() { }
 
@@ -52,15 +54,13 @@ export class UserModel {
         this.group = data.group;
         this.food = data.food;
         this.invitedBy = data.invitedBy;
+        this.comments = data.comments;
 
         return this;
     }
 
     public toApi(): ApiUser {
-        return {
-            _id: this._id,
-            timestamp: this._timestamp.toApi(),
-
+        const api: ApiUser = {
             name: this.name,
             surname: this.surname,
             email: this.email,
@@ -68,8 +68,18 @@ export class UserModel {
             phone: this.phone,
             group: this.group,
             food: this.food,
-            invitedBy: this.invitedBy
+            invitedBy: this.invitedBy,
+            comments: this.comments
         };
+
+        if (this._id) {
+            api._id = this._id;
+        }
+        if (this._timestamp) {
+            api.timestamp = this._timestamp.toApi();
+        }
+
+        return api;
     }
 
     public get id(): string {
