@@ -26,6 +26,7 @@ export class JoinFormComponent implements OnInit {
   @Output()
   public toContacts = new EventEmitter();
 
+  public joinFormError: boolean = false;
   public registerSuccess: boolean = false;
 
   constructor(private userService: UserService) { }
@@ -93,6 +94,7 @@ export class JoinFormComponent implements OnInit {
 
   /* Events */
   public onSubmitForm(value) {
+    this.joinFormError = false;
     const { birth, ...apiUser } = value;
     apiUser.birth = birth.day + '/' + birth.month + '/' + birth.year;
     const user = new UserModel().fromApi(apiUser);
@@ -108,14 +110,15 @@ export class JoinFormComponent implements OnInit {
 
   public onUserRegistered(user: UserModel) {
     this.pendingResponse = false;
+    this.joinFormError = false;
     this.registerSuccess = true;
-    alert(`Registro completado. Se ha enviado un email de confirmación a ${user.email}`);
     this.userForm.reset();
   }
 
   public onApiError(err: Response) {
     this.pendingResponse = false;
-    alert(`Ha habido algún error durante el registro. Comprueba que el formulario esta correctamente rellenado.`);
+    this.joinFormError = true;
+    //alert(`Ha habido algún error durante el registro. Comprueba que el formulario esta correctamente rellenado.`);
   }
   /* */
 }

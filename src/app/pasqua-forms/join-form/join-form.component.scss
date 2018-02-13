@@ -32,6 +32,14 @@
             height: 100px;
         }
     }
+    .error-message {
+        color: $red-error-color;
+        display: block;
+        padding-top: 10px;
+    }
+    &.no-active {
+        flex: 0;
+    }
 }
 
 .join-form-success{

@@ -14,6 +14,7 @@ export class ContactFormComponent implements OnInit {
 
   public contactForm: FormGroup;
   public contactSuccess: boolean = false;
+  public errorContactForm: boolean = false;
 
   @Output()
   public toJoin = new EventEmitter();
@@ -44,7 +45,7 @@ export class ContactFormComponent implements OnInit {
   /* Events */
   public onSubmitForm(value: ApiContact) {
     const contact = new ContactModel().fromApi(value);
-
+    this.errorContactForm = false;
     this.pendingResponse = true;
     this.contactService
       .newContact(contact)
@@ -56,13 +57,15 @@ export class ContactFormComponent implements OnInit {
 
   public onUserRegistered(contact: ContactModel) {
     this.pendingResponse = false;
+    this.errorContactForm = false;
     this.contactSuccess = true;
-    alert(`Mensaje enviado, nos pondremos en contacto tan pronto como sea posible.`);
+    // alert(`Mensaje enviado, nos pondremos en contacto tan pronto como sea posible.`);
     this.contactForm.reset();
   }
 
   public onApiError(err: Response) {
     this.pendingResponse = false;
-    alert(`Ha habido algún error durante el envío. Comprueba que el formulario está correctamente rellenado.`);
+    this.errorContactForm = true;
+    //alert(`Ha habido algún error durante el envío. Comprueba que el formulario está correctamente rellenado.`);
   }
 }
