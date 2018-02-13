@@ -13,6 +13,7 @@ export class ContactFormComponent implements OnInit {
   public pendingResponse = false;
 
   public contactForm: FormGroup;
+  public contactSuccess: boolean = false;
 
   @Output()
   public toJoin = new EventEmitter();
@@ -55,12 +56,13 @@ export class ContactFormComponent implements OnInit {
 
   public onUserRegistered(contact: ContactModel) {
     this.pendingResponse = false;
+    this.contactSuccess = true;
     alert(`Mensaje enviado, nos pondremos en contacto tan pronto como sea posible.`);
     this.contactForm.reset();
   }
 
   public onApiError(err: Response) {
     this.pendingResponse = false;
-    alert(`Ha habido algún error durante el envío. Comprueba que el formulario esta correctamente rellenado.`);
+    alert(`Ha habido algún error durante el envío. Comprueba que el formulario está correctamente rellenado.`);
   }
 }

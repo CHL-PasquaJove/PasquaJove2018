@@ -96,6 +96,8 @@
                 color: $text-box-note-font-color;
                 display: block;
                 text-align: center;
+                height: 30px;
+                line-height: 22px;
             }
         }
         .contact-form {
@@ -128,7 +130,7 @@
                 color: $text-box-note-font-color;
                 &:hover {
                     cursor: pointer;
-                    color: $medium-gray-blue-font-color;
+                    color: $social-media-hover-color;
                 }
             }
             .line-separator {
@@ -148,13 +150,14 @@
                 font-size: 15px;
             }
             .social-network {
+                color: $medium-gray-font-color;
                 cursor: pointer;
                 i {
                     font-weight: bold;
                 }
 
                 &:hover i {
-                    color: $medium-gray-blue-font-color;
+                    color: $social-media-hover-color;
                 }
 
                 &:visited {
@@ -188,6 +191,11 @@
                 .link,
                 .point-separator {
                     color: $medium-gray-blue-font-color !important;
+                }
+                .link {
+                    &:hover {
+                        color: $social-media-hover-color !important;
+                    }
                 }
             }
             .design-by {

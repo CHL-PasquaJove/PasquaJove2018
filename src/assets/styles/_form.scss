@@ -105,6 +105,9 @@
             color: $form-button-disabled-text-color;
             cursor: not-allowed;
         }
+        &:hover {
+            background-color: $medium-gray-blue-button-hover;
+        }
     }
 }
 

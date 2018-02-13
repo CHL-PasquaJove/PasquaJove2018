@@ -1,4 +1,4 @@
-<form [formGroup]="userForm" class="form-fields" (ngSubmit)="onSubmitForm(userForm.value)">
+<form [formGroup]="userForm" class="form-fields" (ngSubmit)="onSubmitForm(userForm.value)" *ngIf="!registerSuccess">
   <span class="title">INSCRÍBETE</span>
   <button class="navigation-button" type="button" (click)="toContacts.emit()">CONTÁCTANOS
     <i class="fa fa-chevron-right"></i>
@@ -38,3 +38,24 @@
   </div>
   <button [disabled]="!canSendForm" class="register-button">Envía el formulario</button>
 </form>
+
+<div class="join-form-success" *ngIf="registerSuccess" [ngClass]="{'no-active': !registerSuccess}">
+    <span class="title">¡GRACIAS!</span>
+    <label>Hemos recibido correctamente tu inscripción.</label>
+    <label>En breves te enviaremos un mail con los datos necesarios <span class="underline">para que finalices tu inscripción</span> y con toda la información necesaria sobre la Pascua Joven XXII.</label>
+    <div class="add-ons">
+      <div class="document-container">
+        <label>Si quieres descargate ya el documento con la información, puedes encontrarlo aquí:</label>
+        <button class="button">DESCARGA EL DOCUMENTO</button>
+      </div>
+      <div class="separator">
+        <div class="divider"></div>
+        <span>o</span>
+        <div class="divider"></div>
+      </div>
+      <div class="contact-container">
+        <label>Si hay algo que quieras decirnos, rellena el formulario de contacto que encontrarás aquí:</label>
+        <button class="button" (click)="toContacts.emit()">CONTACTA CON NOSOTROS</button>
+      </div>
+    </div>
+</div>

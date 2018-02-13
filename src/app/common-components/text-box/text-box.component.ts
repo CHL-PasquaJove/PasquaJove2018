@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TextBoxComponent implements OnInit {
 
-  @Input() public messageText: number;
+  @Input() public messageText: string;
   constructor() { }
 
   ngOnInit() {

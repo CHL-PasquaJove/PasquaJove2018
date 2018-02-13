@@ -26,6 +26,8 @@ export class JoinFormComponent implements OnInit {
   @Output()
   public toContacts = new EventEmitter();
 
+  public registerSuccess: boolean = false;
+
   constructor(private userService: UserService) { }
 
   ngOnInit() {
@@ -106,7 +108,9 @@ export class JoinFormComponent implements OnInit {
 
   public onUserRegistered(user: UserModel) {
     this.pendingResponse = false;
+    this.registerSuccess = true;
     alert(`Registro completado. Se ha enviado un email de confirmación a ${user.email}`);
+    this.userForm.reset();
   }
 
   public onApiError(err: Response) {
