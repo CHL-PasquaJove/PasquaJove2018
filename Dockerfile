@@ -1,5 +1,10 @@
 FROM httpd
 
+### Prepare environment
+
+# Variables
+ENV HOME=/usr/local/apache2
+
 # Add basic file system
 
 ADD docker /
