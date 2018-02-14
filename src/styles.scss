@@ -4,6 +4,7 @@
 @import '../node_modules/font-awesome/scss/font-awesome';
 @import './assets/styles/styleColor';
 @import './assets/styles/styleSheet';
+@import './assets/styles/fonts';
 
 html {
     height: 100%;
@@ -11,6 +12,10 @@ html {
         padding: 0px;
         margin: 0px;
         height: 100%;
+    }
+
+    label, span, div, input, select {
+        font-family: 'SourceSansPro';
     }
 
     @import './assets/styles/form';
