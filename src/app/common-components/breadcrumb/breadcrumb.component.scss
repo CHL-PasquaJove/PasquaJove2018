@@ -9,8 +9,20 @@
     margin-left: 30px;
     background-color: transparent;
 
+    .line {
+        background-color: $white-font-color;
+        width: 2px;
+        height: 40px;
+        margin-left: 1px;
+        opacity: 0.3;
+    }
     .list-element {
         opacity: 0.3;
+        display: flex;
+        margin: 10px -1px;
+        flex-direction: row;
+        align-items: center;
+
         .square {
             background-color: $white-font-color;
             height: 5px;
@@ -23,42 +35,32 @@
         .slide-name {
             color: $white-font-color;
             letter-spacing: -0.1px;
-            font-family: 'Open Sans';
-            font-size: 10px;
-            margin-left: 10px;
+            font-size: 15px;
+            margin-left: 15px;
             font-weight: 600;
             opacity: 0;
             position: absolute;
-            margin-top: 5px;
         }
 
-        .line {
-            background-color: $white-font-color;
-            width: 2px;
-            height: 40px;
-            margin-left: 1px;
+        &:hover {
+            opacity: 1;
+            .square { opacity: 0.3; }
+            .slide-name {
+                &:hover {
+                    opacity: 0.5;
+                    cursor: pointer;
+                }
+            }
         }
 
         &.active {
             opacity: 1;
             .square { border-radius: 0px; }
             .slide-name { opacity: 1; }
-            .line { opacity: 0.3; }
             &:hover {
                 .square {opacity: 1; }
                 .slide-name { opacity: 1; }
             }
-        }
-        &:hover {
-            opacity: 1;
-            .square { opacity: 0.3; }
-            .slide-name { 
-                &:hover {
-                    opacity: 0.5;
-                    cursor: pointer;
-                }
-            }
-            .line { opacity: 0.3; }
         }
     }
 }
