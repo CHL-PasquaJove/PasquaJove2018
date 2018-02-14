@@ -34,6 +34,10 @@
                 font-weight: normal;
                 font-style: italic;
                 letter-spacing: -0.2px;
+
+                &.author {
+                    display: block;
+                }
             }
         }
     }
