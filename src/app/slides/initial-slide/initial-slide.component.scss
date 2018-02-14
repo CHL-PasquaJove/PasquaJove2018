@@ -17,30 +17,34 @@
         height: 100%;
         margin-left: 20%;
         position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 
         .title-container {
             width: 100%;
-            height: 30%;
-            position: absolute;
-            margin-top: 40%;
             text-align: center;
-            .main-title {
-                color: $white-font-color;
-                font-family: 'Open Sans';
-                font-weight: 900;
-                font-size: 50px;
-                letter-spacing: -0.6px;
+
+            label {
                 text-align: center;
                 display: block;
+                margin: 0px;
+            }
+
+            .main-title {
+                color: $white-font-color;
+                font-family: 'SourceSansPro';
+                font-weight: bold;
+                font-size: 5.9vw;
+                letter-spacing: -0.6px;
             }
             .lema {
                 color: $white-font-color;
-                font-family: 'Open Sans';
-                font-size: 25px;
+                font-family: 'Lora';
+                font-size: 2.5vw;
                 font-weight: normal;
                 font-style: italic;
                 letter-spacing: -0.2px;
-                display: block;
 
             }
         }
@@ -54,7 +58,7 @@
             margin-left: 10%;
             .message {
                 color: $white-font-color;
-                font-size: 15px;
+                font-size: 1.5vw;
                 letter-spacing: -0.1px;
                 font-family: 'Open Sans';
             }
