@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { UserService } from '../../api/user.service';
 import { UserModel } from '../../model/user.model';
+import { ErrorResponse } from '../../model/error-response.model';
 
 @Component({
   selector: 'join-form',
@@ -26,8 +27,9 @@ export class JoinFormComponent implements OnInit {
   @Output()
   public toContacts = new EventEmitter();
 
-  public joinFormError: boolean = false;
   public registerSuccess: boolean = false;
+
+  public joinFormErrorMessage: string;
 
   constructor(private userService: UserService) { }
 
@@ -45,6 +47,9 @@ export class JoinFormComponent implements OnInit {
 
   public get canSendForm() {
     return this.userForm.valid && !this.pendingResponse;
+  }
+  public get joinFormError(): boolean {
+    return !!this.joinFormErrorMessage;
   }
   /* */
 
@@ -90,15 +95,19 @@ export class JoinFormComponent implements OnInit {
                     .controls['day'].setValue(days);
     }
   }
+  public clearError() {
+    this.joinFormErrorMessage = '';
+  }
   /* */
 
   /* Events */
   public onSubmitForm(value) {
-    this.joinFormError = false;
     const { birth, ...apiUser } = value;
     apiUser.birth = birth.day + '/' + birth.month + '/' + birth.year;
+
     const user = new UserModel().fromApi(apiUser);
 
+    this.clearError();
     this.pendingResponse = true;
     this.userService
       .newUser(user)
@@ -110,15 +119,32 @@ export class JoinFormComponent implements OnInit {
 
   public onUserRegistered(user: UserModel) {
     this.pendingResponse = false;
-    this.joinFormError = false;
+    this.clearError();
+
     this.registerSuccess = true;
     this.userForm.reset();
   }
 
-  public onApiError(err: Response) {
+  public onApiError(err) {
+    this.clearError();
     this.pendingResponse = false;
-    this.joinFormError = true;
-    //alert(`Ha habido algún error durante el registro. Comprueba que el formulario esta correctamente rellenado.`);
+
+    switch (err.status) {
+      case 400: // Bad request
+        const resp: ErrorResponse = err.json();
+
+        resp.errors.forEach((e) => {
+          this.userForm.controls[e.field].setErrors({'incorrect': true});
+        });
+        this.joinFormErrorMessage = 'Hay campos con error. Revisa que estén correctamente rellenados';
+        break;
+
+      case 504: // Gateway timeout
+      default:
+        console.error('Error en el servidor', err);
+        this.joinFormErrorMessage = 'Ha habido un error durante el envío del formulario. Contacta con los responsables, por favor.';
+        break;
+    }
   }
   /* */
 }

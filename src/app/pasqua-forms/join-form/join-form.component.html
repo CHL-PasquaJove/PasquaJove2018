@@ -37,7 +37,7 @@
       formControlName="comments"></textarea>
   </div>
   <button [disabled]="!canSendForm" class="register-button">Envía el formulario</button>
-  <label *ngIf="errorJoinForm" class="error-message">Ha habido algún error durante el registro. Comprueba que el formulario esta correctamente rellenado.</label>
+  <label *ngIf="joinFormError" class="error-message">{{joinFormErrorMessage}}</label>
 </form>
 
 <div class="join-form-success" *ngIf="registerSuccess" [ngClass]="{'no-active': !registerSuccess}">

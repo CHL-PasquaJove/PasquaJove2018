@@ -21,6 +21,7 @@
         color: $red-error-color;
         display: block;
         padding-top: 10px;
+        max-width: 600px;
     }
     &.no-active{
         flex: 0;

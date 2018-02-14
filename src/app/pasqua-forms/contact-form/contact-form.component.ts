@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { ContactService } from '../../api/contact.service';
 import { ContactModel, ApiContact } from '../../model/contact.model';
+import { ErrorResponse } from '../../model/error-response.model';
 
 @Component({
   selector: 'contact-form',
@@ -14,7 +15,8 @@ export class ContactFormComponent implements OnInit {
 
   public contactForm: FormGroup;
   public contactSuccess: boolean = false;
-  public errorContactForm: boolean = false;
+
+  public errorContactFormMessage: string;
 
   @Output()
   public toJoin = new EventEmitter();
@@ -30,6 +32,9 @@ export class ContactFormComponent implements OnInit {
   public get canSendForm() {
     return this.contactForm.valid && !this.pendingResponse;
   }
+  public get errorContactForm(): boolean {
+    return !!this.errorContactFormMessage;
+  }
   /* */
 
   /* Methods */
@@ -40,12 +45,15 @@ export class ContactFormComponent implements OnInit {
       comment: new FormControl('', Validators.required)
     });
   }
+  public clearError() {
+    this.errorContactFormMessage = '';
+  }
   /* */
 
   /* Events */
   public onSubmitForm(value: ApiContact) {
     const contact = new ContactModel().fromApi(value);
-    this.errorContactForm = false;
+    this.clearError();
     this.pendingResponse = true;
     this.contactService
       .newContact(contact)
@@ -57,15 +65,31 @@ export class ContactFormComponent implements OnInit {
 
   public onUserRegistered(contact: ContactModel) {
     this.pendingResponse = false;
-    this.errorContactForm = false;
     this.contactSuccess = true;
-    // alert(`Mensaje enviado, nos pondremos en contacto tan pronto como sea posible.`);
+    this.clearError();
+
     this.contactForm.reset();
   }
 
-  public onApiError(err: Response) {
+  public onApiError(err) {
+    this.clearError();
     this.pendingResponse = false;
-    this.errorContactForm = true;
-    //alert(`Ha habido algún error durante el envío. Comprueba que el formulario está correctamente rellenado.`);
+
+    switch (err.status) {
+      case 400: // Bad request
+        const resp: ErrorResponse = err.json();
+
+        resp.errors.forEach((e) => {
+          this.contactForm.controls[e.field].setErrors({'incorrect': true});
+        });
+        this.errorContactFormMessage = 'Hay campos con error. Revisa que estén correctamente rellenados';
+        break;
+
+      case 504: // Gateway timeout
+      default:
+        console.error('Error en el servidor', err);
+        this.errorContactFormMessage = 'Ha habido un error durante el envío del formulario. Contacta con los responsables, por favor.';
+        break;
+    }
   }
 }
