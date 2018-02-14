@@ -6,7 +6,7 @@
 
     .title {
         color: $dark-blue-font-color;
-        font-size: 20px;
+        font-size: 22px;
         font-weight: bold;
         letter-spacing: -0.1px;
         padding-bottom: 10px;
@@ -17,10 +17,11 @@
         border: none;
         background-color: transparent;
         color: $text-box-note-font-color;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: bold;
         right: 0px;
         cursor: pointer;
+
         i {
             font-weight: normal;
         }
@@ -98,12 +99,16 @@
         width: 200px;
         height: 35px;
         background-color: $medium-gray-blue-font-color;
-        color: white;
+        color: $white-font-color;
         cursor: pointer;
         &:disabled {
             background-color: $disabled-form-button;
             color: $form-button-disabled-text-color;
             cursor: not-allowed;
+
+            &:hover {
+                color: $white-font-color;
+            }
         }
         &:hover {
             background-color: $medium-gray-blue-button-hover;

@@ -31,6 +31,7 @@
             label {
                 color: $white-font-color;
                 font-size: 18px;
+                font-family: 'Lora';
                 font-weight: normal;
                 font-style: italic;
                 letter-spacing: -0.2px;
@@ -50,27 +51,26 @@
         display: inline-block;
 
         .text-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             width: 100%;
-            height: 40%;
-            position: absolute;
-            top: 35%;
+            height: 100%;
 
             .title {
                 display: block;
                 color: $dark-blue-font-color;
-                font-size: 20px;
+                font-size: 22px;
                 font-weight: 900;
                 letter-spacing: -0.2px;
-                font-family: 'Open Sans';
                 padding: 0 20px;
             }
 
             p {
                 color: $medium-gray-font-color;
-                font-size: 15px;
+                font-size: 16px;
                 font-weight: normal;
                 letter-spacing: -0.1px;
-                font-family: 'Open Sans';
                 padding: 0 20px;
             }
         }
