@@ -1,13 +1,16 @@
 .web-container {
     height: 100%;
     width: 100%;
+    flex: 1 0 auto;
+    display: flex;
 
-    &.blue-color {
-        background-color: blue;
-        margin-top: -21px;
+    initial-slide {
+        flex: 1;
+        display: flex;
     }
-    &.green-color {
-        background-color: green;
-        margin-top: -21px;
+
+    what-slide {
+        flex: 1;
+        display: flex;
     }
 }
