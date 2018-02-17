@@ -10,10 +10,7 @@
     <div class="text-container">
       <div class="text-wrapper">
         <label class="title">ESTA PASCUA</label>
-        <p>Aquí ya sí que vendrían los detalles concretos de esta Pascua en concreto como
-          los días, las edades concretas, el lugar, lo que hace falta, etc.
-        </p>
-        <p>Tambíen querría hacer algo más interactivo.
+        <p>Para participar en la Pascua hay que saber:
         </p>
         <div class="info-container">
           <div class="label-container">
@@ -24,14 +21,12 @@
             <label class="info-label">Edades:</label>
             <label class="info-value">De 16 a 30 años</label>
           </div>
-          <text-box [messageText]="'Si eres menor necesitarás traer <a>nuestra autorización</a> 
-            rellenada y firmada'"></text-box>
+          <text-box>Si eres menor necesitarás traer <a href="/assets/documents/autorizacion-menores.pdf">nuestra autorización</a> rellenada y firmada</text-box>
           <div class="label-container">
             <label class="info-label">Precio:</label>
             <label class="info-value">120€</label>
           </div>
-          <text-box [messageText]="'Si vienes con tu hermano, o hermanos, todos recibiréis 
-            un descuento de 15€'"></text-box>
+          <text-box>Si vienes con tu hermano, o hermanos, todos recibiréis un descuento de 15€</text-box>
           <div class="label-container">
             <label class="info-label">Dónde:</label>
             <label class="info-value"><a href="https://www.google.es/maps/place/La+Conreria/@41.491544,2.252576,15z/data=!4m2!3m1!1s0x0:0x1eb6f6d3e49a9607?sa=X&ved=0ahUKEwj5x5q_raXZAhUE6RQKHQj3AMYQ_BIIfjAK" target="_blank">Casa de colonias La Conrería</a></label>
@@ -39,7 +34,7 @@
           </div>
           <div class="label-container">
               <label class="info-label">Cómo inscribirse:</label>
-              <label class="info-value">Para inscribirte necesitarás rellenar <a>el formulario</a>, que encontrarás en la siguiente sección, y realizar los pagos según se explica en el documento que te enviaremos cuando te inscribas.</label>
+              <label class="info-value">Para inscribirte necesitarás rellenar <a routerLink="/join" fragment="join-contact">el formulario</a>, que encontrarás en la siguiente sección, y realizar los pagos según se explica en el documento que te enviaremos cuando te inscribas.</label>
             </div>
         </div>
       </div>

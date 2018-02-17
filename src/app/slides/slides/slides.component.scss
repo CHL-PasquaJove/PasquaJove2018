@@ -1,0 +1,15 @@
+.web-container {
+    height: 100%;
+    width: 100%;
+    flex: 1 0 auto;
+    display: flex;
+
+    initial-slide,
+    what-slide,
+    encounter-slide,
+    this-easter-slide,
+    join-contact-slide {
+        flex: 1;
+        display: flex;
+    }
+}
