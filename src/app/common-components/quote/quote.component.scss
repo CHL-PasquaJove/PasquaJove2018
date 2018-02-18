@@ -1,0 +1,54 @@
+@import '~assets/styles/styleColor';
+                
+.quote {
+    width: 80%;
+    margin: 0 7%;
+    position: relative;
+    margin-top: 10px;
+
+    i.quote-icon {
+        font-size: 46px;
+        position: absolute;
+        z-index: 1;
+        color: $medium-gray-blue-font-color;
+        opacity: 0.25;
+
+        &.fa-quote-right {
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    .quote-content {
+        margin: 0px 30px;
+        padding-top: 18px;
+
+        .quote-message  {
+            font-size: 16px;
+            font-family: 'Lora';
+            font-style: italic;
+            letter-spacing: -0.1px;
+            font-weight: normal;
+            color: $medium-gray-blue-font-color;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .quote-owner {
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: -0.1px;
+            font-style: normal;
+            margin-right: 3px;
+            color: $dark-blue-font-color;
+        }
+
+        .owner-age {
+            font-size: 15px;
+            font-weight: normal;
+            letter-spacing: -0.1px;
+            font-style: normal;
+            color: $dark-blue-font-color;
+        }
+    }
+}
