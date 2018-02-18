@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://api.pascuajoven.com'
+  apiBaseUrl: 'https://pre-api.pascuajoven.com'
 };
