@@ -91,28 +91,25 @@
             }
         }
     }
-
-    .register-button {
-        margin-top: 20px;
-        border: none;
-        border-radius: 20px;
-        width: 200px;
-        height: 35px;
-        background-color: $medium-gray-blue-font-color;
-        color: $white-font-color;
-        cursor: pointer;
-        &:disabled {
-            background-color: $disabled-form-button;
-            color: $form-button-disabled-text-color;
-            cursor: not-allowed;
-
-            &:hover {
-                color: $white-font-color;
-            }
-        }
-        &:hover {
-            background-color: $medium-gray-blue-button-hover;
-        }
-    }
 }
 
+button.button {
+    border: none;
+    border-radius: 20px;
+    padding: 6.5px 15px;
+    background-color: $medium-gray-blue-font-color;
+    color: $white-font-color;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $medium-gray-blue-button-hover;
+    }
+    &:disabled {
+        background-color: $disabled-form-button;
+        color: $form-button-disabled-text-color;
+        cursor: not-allowed;
+    }
+}

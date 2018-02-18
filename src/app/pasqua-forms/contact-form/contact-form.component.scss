@@ -17,6 +17,10 @@
             height: 100px;
         }
     }
+    .button {
+        width: 200px;
+        margin-top: 20px;
+    }
     .error-message {
         color: $red-error-color;
         display: block;
@@ -39,7 +43,8 @@
     }
     .title {
         display: block;
-        font-size: 30px;
+        font-family: 'Lora';
+        font-size: 32px;
         color: $dark-blue-font-color;
         font-style: italic;
         letter-spacing: -0.3px;
@@ -50,7 +55,9 @@
         display: block;
         font-size: 16px;
         letter-spacing: -0.1px;
-        span {
+
+        span.bold {
+            font-weight: bold;
             color: $dark-blue-font-color;
         }
     }
@@ -64,19 +71,7 @@
                 font-size: 14px;
             }
             .button {
-                border: none;
-                border-radius: 20px;
                 width: 200px;
-                height: 35px;
-                background-color: $medium-gray-blue-font-color;
-                color: white;
-                font-size: 10px;
-                font-weight: bold;
-                letter-spacing: -0.1px;
-                cursor: pointer;
-                &:hover{
-                    background-color: $medium-gray-blue-button-hover;
-                }
             }
         }
         .document-container {

@@ -14,8 +14,13 @@ html {
         height: 100%;
     }
 
-    label, span, div, input, select, p {
+    label, span, div, input, select, p, button {
         font-family: 'SourceSansPro';
+    }
+
+    /* Temporary fix */
+    .arrow-container {
+        display: none;
     }
 
     @import './assets/styles/form';
