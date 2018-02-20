@@ -145,7 +145,8 @@
         }
         .image-container {
             .init-message {
-                flex: 1 0 100px;
+                flex: 1 0 200px;
+                max-height: 200px;
                 text-align: right;
                 top: 20%;
                 right: 40px;
