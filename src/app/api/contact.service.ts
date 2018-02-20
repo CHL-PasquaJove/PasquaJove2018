@@ -5,11 +5,12 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { ContactModel, ApiContact } from '../model/contact.model';
+import { environment } from '../../environments/environment';
 
 
 @Injectable()
 export class ContactService {
-  public baseUrl = 'https://api.pascuajoven.com'; // Should be on config
+  public baseUrl = environment.apiBaseUrl;
   constructor(private http: Http) { }
 
   public newContact(contact: ContactModel): Observable<ContactModel> {

@@ -11,18 +11,18 @@
   <div class="form-row">
     <textarea placeholder="Explicanos que sucede.*" formControlName="comment"></textarea>
   </div>
-  <button [disabled]="!canSendForm" class="register-button">Envía el formulario</button>
+  <button [disabled]="!canSendForm" class="button">Envía el formulario</button>
   <label *ngIf="errorContactForm" class="error-message">{{errorContactFormMessage}}</label>
 </form>
 
 <div class="contact-form-success" *ngIf="contactSuccess" [ngClass]="{'no-active': !contactSuccess}">
-    <span class="title">¡GRACIAS!</span>
+    <span class="title">¡Gracias!</span>
     <label>Hemos recibido correctamente tu mensaje.</label>
     <label>En breves nos pondremos directamente en contacto contigo.</label>
     <div class="add-ons">
       <div class="document-container">
         <label>Puedes descargate ya el documento con la información de la Pascua Joven XXII:</label>
-        <button class="button">DESCARGA EL DOCUMENTO</button>
+        <a href="/assets/documents/Documento-PJXXII.pdf" download><button class="button">Descarga el documento</button></a>
       </div>
       <div class="separator">
         <div class="divider"></div>
@@ -31,7 +31,7 @@
       </div>
       <div class="contact-container">
         <label>Si todavia no te has inscrito, puedes acceder al formulario de inscripción aquí:</label>
-        <button class="button" (click)="toJoin.emit()">ACCEDE AL FORMULARIO</button>
+        <button class="button" (click)="toJoin.emit()">Accede al formulario</button>
       </div>
     </div>
 </div>

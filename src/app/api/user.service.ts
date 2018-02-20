@@ -5,11 +5,12 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { UserModel, ApiUser } from '../model/user.model';
+import { environment } from '../../environments/environment';
 
 
 @Injectable()
 export class UserService {
-  public baseUrl = 'https://api.pascuajoven.com'; // Should be on config
+  public baseUrl = environment.apiBaseUrl;
   constructor(private http: Http) { }
 
   public newUser(user: UserModel): Observable<UserModel> {
