@@ -1,34 +1,37 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {Component, OnInit, AfterViewInit} from "@angular/core";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
-  selector: 'join-contact-slide',
-  templateUrl: './join-contact-slide.component.html',
-  styleUrls: ['./join-contact-slide.component.scss']
+  selector: "join-contact-slide",
+  templateUrl: "./join-contact-slide.component.html",
+  styleUrls: ["./join-contact-slide.component.scss"]
 })
 export class JoinContactSlideComponent implements OnInit, AfterViewInit {
   public openJoinForm: boolean = false;
   public openContactForm: boolean = false;
   private fragment: string;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
     this.route.paramMap
       .subscribe((params) => {
-        const form = params.get('form');
+        const form = params.get("form");
         switch (form) {
-          case 'join':
+          case "join":
             this.openJoinForm = true;
             break;
 
-          case 'contact':
+          case "contact":
             this.openContactForm = true;
             break;
         }
       });
 
-      this.route.fragment.subscribe(fragment => { this.fragment = fragment; });
+    this.route.fragment.subscribe(fragment => {
+      this.fragment = fragment;
+    });
   }
 
   ngAfterViewInit(): void {
@@ -37,7 +40,7 @@ export class JoinContactSlideComponent implements OnInit, AfterViewInit {
   }
 
   public scrollToElement(elementId: string): void {
-    if (elementId === '') {
+    if (elementId === "") {
       return;
     }
 
@@ -46,6 +49,6 @@ export class JoinContactSlideComponent implements OnInit, AfterViewInit {
       return;
     }
 
-    element.scrollIntoView({block: 'end', behavior: 'smooth'});
+    element.scrollIntoView({block: "end", behavior: "smooth"});
   }
 }
