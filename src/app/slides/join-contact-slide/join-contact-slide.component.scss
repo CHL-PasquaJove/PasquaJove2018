@@ -1,218 +1,218 @@
 @import '~assets/styles/styleColor';
 
-.join-contact-slide{
-    height: 100%;
-    position: relative;
+.join-contact-slide {
+  height: 100%;
+  position: relative;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+
+  .header-container {
+    height: 200px;
+    width: 100%;
+    background-image: url('/assets/images/forms-slide-background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+  }
+
+  .forms-container {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-
-    .header-container {
-        height: 200px;
-        width: 100%;
-        background-image: url('/assets/images/forms-slide-background.jpg');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        -webkit-flex: 0 1 auto;
-        -ms-flex: 0 1 auto;
-        flex: 0 1 auto;
-    }
-
-    .forms-container {
-        -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-        display: -ms-flexbox;
-        display: -webkit-flex;
+    .join-form,
+    .contact-form {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex: 1 0 49%;
+      -ms-flex: 1 0 49%;
+      flex: 1 0 49%;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      color: $text-box-note-font-color;
+      &.hidden-join-form {
+        flex: 0;
+      }
+      .collapsed-join-form,
+      .collapsed-contact-form {
+        cursor: pointer;
+        flex: 1 1 1;
         display: flex;
-        .join-form,
-        .contact-form {
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex: 1 0 49%;
-            -ms-flex: 1 0 49%;
-            flex: 1 0 49%;
-            flex-direction: column;
-            text-align: center;
-            justify-content: center;
-            color: $text-box-note-font-color;
-            &.hidden-join-form {
-                flex: 0;
-            }
-            .collapsed-join-form,
-            .collapsed-contact-form {
-                cursor: pointer;
-                flex: 1 1 1;
-                display: flex;
-                flex-direction: column;
-                padding: 20px 0;
-                margin: 0 100px;
-                span{
-                    display: block;
-                    padding: 0 20px;
-                }
-                &:hover {
-                    color: $medium-gray-blue-font-color;
-                    border-top: 1px solid $dark-blue-font-color;
-                    border-bottom: 1px solid $dark-blue-font-color;
-                }
-            }
-            .form-title {
-                font-size: 22px;
-                font-weight: 900;
-                letter-spacing: -0.2px;
-            }
-            .form-message {
-                font-size: 16px;
-                font-weight: normal;
-                letter-spacing: -0.1px;
-            }
-            .expanded-join-form,
-            .expanded-contact-form {
-                display: flex;
-                margin: 15px auto;
-                overflow: auto;
-            }
+        flex-direction: column;
+        padding: 20px 0;
+        margin: 0 100px;
+        span {
+          display: block;
+          padding: 0 20px;
         }
-        .forms-separator {
-            width: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            .divider {
-                width: 2px;
-                opacity: 0.5;
-                height: 25px;
-                background-color: $medium-gray-blue-font-color;
-            }
-            span {
-                font-size: 35px;
-                font-weight: 600;
-                color: $text-box-note-font-color;
-                display: block;
-                height: 30px;
-                line-height: 22px;
-            }
+        &:hover {
+          color: $medium-gray-blue-font-color;
+          border-top: 1px solid $dark-blue-font-color;
+          border-bottom: 1px solid $dark-blue-font-color;
         }
-        .contact-form {
-            &.hidden-contact-form {
-                flex: 0;
-            }
-        }
+      }
+      .form-title {
+        font-size: 22px;
+        font-weight: 900;
+        letter-spacing: -0.2px;
+      }
+      .form-message {
+        font-size: 16px;
+        font-weight: normal;
+        letter-spacing: -0.1px;
+      }
+      .expanded-join-form,
+      .expanded-contact-form {
+        display: flex;
+        margin: 15px auto;
+        overflow: auto;
+      }
     }
+    .forms-separator {
+      width: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-    .footer-container {
-        height: 170px;
-        background-color: $background-box-gray;
-        // bottom: 0;
-        width: 100%;
-        -webkit-flex: 0 1 auto;
-        -ms-flex: 0 1 auto;
-        flex: 0 1 auto;
-        .horizontal-breadcrumb{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            text-align: center;
-            line-height: 50px;
-            height: 50px;
-            .breadcrumb-step {
-                font-weight: bold;
-                font-size: 11px;
-                letter-spacing: -0.1px;
-                color: $text-box-note-font-color;
-                &:hover {
-                    cursor: pointer;
-                    color: $social-media-hover-color;
-                }
-            }
-            .line-separator {
-                margin: 0px 5px;
-                width: 30px;
-                height: 0px;
-                opacity: 0.5;
-                border: 1px solid $medium-gray-blue-font-color;
-            }
-        }
-        .follow-container{
-            text-align: center;
-            line-height: 30px;
-            height: 30px;
-            color: $text-box-note-font-color;
-            span {
-                letter-spacing: -0.1px;
-                font-size: 16px;
-            }
-            .social-network {
-                color: $medium-gray-font-color;
-                cursor: pointer;
-                i {
-                    font-weight: bold;
-                }
-
-                &:hover i {
-                    color: $social-media-hover-color;
-                }
-
-                &:visited {
-                    color: inherit;
-                }
-            }
-        }
-        .bottom-footer {
-            .organized-by {
-                position: absolute;
-                bottom: 55px;
-                left: 10px;
-                font-size: 13px;
-                color: $text-box-note-font-color;
-            }
-            .cfl-logo {
-                position: absolute;
-                bottom: 10px;
-                left: 10px;
-                width: 150px;
-            }
-            .links-container {
-                position: absolute;
-                left: 175px;
-                bottom: 18px;
-                font-size: 11px;
-                .address {
-                    display: block;
-                    color: $text-box-note-font-color;
-                }
-                .link,
-                .point-separator {
-                    color: $medium-gray-blue-font-color !important;
-                }
-                .link {
-                    &:hover {
-                        color: $social-media-hover-color !important;
-                    }
-                }
-            }
-            .design-by {
-                position: absolute;
-                bottom: 55px;
-                right: 10px;
-                font-size: 13px;
-                color: $text-box-note-font-color;
-            }
-            .hayaluz-logo {
-                width: 50px;
-                right: 10px;
-                bottom: 10px;
-                position: absolute;
-            }
-        }
+      .divider {
+        width: 2px;
+        opacity: 0.5;
+        height: 25px;
+        background-color: $medium-gray-blue-font-color;
+      }
+      span {
+        font-size: 35px;
+        font-weight: 600;
+        color: $text-box-note-font-color;
+        display: block;
+        height: 30px;
+        line-height: 22px;
+      }
     }
+    .contact-form {
+      &.hidden-contact-form {
+        flex: 0;
+      }
+    }
+  }
+
+  .footer-container {
+    height: 170px;
+    background-color: $background-box-gray;
+    // bottom: 0;
+    width: 100%;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    .horizontal-breadcrumb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      line-height: 50px;
+      height: 50px;
+      .breadcrumb-step {
+        font-weight: bold;
+        font-size: 11px;
+        letter-spacing: -0.1px;
+        color: $text-box-note-font-color;
+        &:hover {
+          cursor: pointer;
+          color: $social-media-hover-color;
+        }
+      }
+      .line-separator {
+        margin: 0 5px;
+        width: 30px;
+        height: 0;
+        opacity: 0.5;
+        border: 1px solid $medium-gray-blue-font-color;
+      }
+    }
+    .follow-container {
+      text-align: center;
+      line-height: 30px;
+      height: 30px;
+      color: $text-box-note-font-color;
+      span {
+        letter-spacing: -0.1px;
+        font-size: 16px;
+      }
+      .social-network {
+        color: $medium-gray-font-color;
+        cursor: pointer;
+        i {
+          font-weight: bold;
+        }
+
+        &:hover i {
+          color: $social-media-hover-color;
+        }
+
+        &:visited {
+          color: inherit;
+        }
+      }
+    }
+    .bottom-footer {
+      .organized-by {
+        position: absolute;
+        bottom: 55px;
+        left: 10px;
+        font-size: 13px;
+        color: $text-box-note-font-color;
+      }
+      .cfl-logo {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        width: 150px;
+      }
+      .links-container {
+        position: absolute;
+        left: 175px;
+        bottom: 18px;
+        font-size: 11px;
+        .address {
+          display: block;
+          color: $text-box-note-font-color;
+        }
+        .link,
+        .point-separator {
+          color: $medium-gray-blue-font-color !important;
+        }
+        .link {
+          &:hover {
+            color: $social-media-hover-color !important;
+          }
+        }
+      }
+      .design-by {
+        position: absolute;
+        bottom: 55px;
+        right: 10px;
+        font-size: 13px;
+        color: $text-box-note-font-color;
+      }
+      .hayaluz-logo {
+        width: 50px;
+        right: 10px;
+        bottom: 10px;
+        position: absolute;
+      }
+    }
+  }
 }
