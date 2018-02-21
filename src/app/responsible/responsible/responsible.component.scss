@@ -1,0 +1,138 @@
+@import '~assets/styles/global';
+
+:host {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .responsible-header {
+        height: 58px;
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 30px;
+
+        @include media('>phone') {
+            margin-bottom: 20px;
+        }
+
+        ::ng-deep header {
+            display: block;
+            flex: 1;
+
+            .header {
+                position: relative;
+                margin: 0px;
+            }
+
+            label.main-title {
+                color: $dark-blue-font-color;
+                font-size: 30px;
+
+                @include media('<=phone') {
+                    font-size: 20px;
+                }
+            }
+
+            label.lema {
+                color: $dark-blue-font-color;
+                margin-left: 10px;
+                font-size: 20px;
+
+                @include media('<=phone') {
+                    display: none;
+                }
+            }
+        }
+
+        .right-info {
+            color: $text-box-note-font-color;
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: -0.2px;
+            text-transform: uppercase;
+
+            @include media('<=phone') {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .responsible-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        @include media('<=phone') {
+            flex-direction: column-reverse;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: row;
+            padding: 0 30px;
+
+            @include media('<=phone') {
+                padding: 0;
+                height: 50px;
+                align-items: center;
+                box-shadow: 0 -2px 20px 0 rgba(0, 0, 0, 0.2);
+            }
+    
+            .tab {
+                color: $medium-gray-blue-font-color;
+                font-size: 25px;
+                font-weight: 900;
+                letter-spacing: -0.2px;
+                text-transform: uppercase;
+                margin-right: 40px;
+                padding: 5px 0;
+                cursor: pointer;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 100%;
+    
+                &.active {
+                    border-bottom: 3px solid $dark-blue-font-color;
+
+                    @include media('<=phone') {
+                        color: $white-font-color;
+                        background-color: $medium-gray-blue-font-color;
+                        border-bottom: none;
+                    }
+                }
+    
+                &:focus {
+                    outline: none;
+                }
+
+                @include media('<=phone') {
+                    font-size: 13px;
+                    margin-right: 0px;
+                    text-align: center;
+                    flex: 1;
+                }
+
+                span {
+                    width: 100%;
+                }
+            }
+        }
+    
+        .tabs-content {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            @include media('>phone') {
+                margin: 40px 30px;
+            }
+            @include media('<=phone') {
+                padding: 25px 30px;
+            }
+        }
+    }
+}

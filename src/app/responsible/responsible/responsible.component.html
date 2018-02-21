@@ -1,0 +1,17 @@
+<div class="responsible-header">
+  <header></header>
+  <label class="right-info">Página de responsables</label>
+</div>
+<div class="responsible-body">
+  <div class="tabs">
+    <div class="tab" routerLink="inscriptions" routerLinkActive="active">
+      <span>{{usersCount}} inscripciones</span>
+    </div>
+    <div class="tab" routerLink="messages" routerLinkActive="active">
+      <span>{{contactsCount}} mensajes</span>
+    </div>
+  </div>
+  <div class="tabs-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
 
-import { SlidesComponent } from './slides/slides/slides.component';
+import { slidesRoutes } from './slides';
+import { responsibleRoutes } from './responsible';
 
 
 export const appRoutes: Routes = [
-    { path: '', component: SlidesComponent },
-    { path: ':form', component: SlidesComponent },
+    ...responsibleRoutes,
+    ...slidesRoutes,
   ];

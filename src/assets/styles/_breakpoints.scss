@@ -1,0 +1,31 @@
+@import './include-medias';
+
+/*********************
+BREAKPOINTS
+*********************/
+$breakpoints: (
+    'phone': 37.5em,
+    'phablet': 37.5em,
+    'tablet': 50em,
+    'labtop': 64em,
+    'desktop': 70em
+);
+
+
+@mixin breakpoint($point) {
+    @if $point == desktop {
+        @media (min-width: 70em) { @content ; }
+    }
+    @else if $point == laptop {
+        @media (min-width: 64em) { @content ; }
+    }
+        @else if $point == tablet {
+        @media (min-width: 50em) { @content ; }
+    }
+    @else if $point == phablet {
+        @media (min-width: 37.5em)  { @content ; }
+    }
+    @else if $point == mobileonly {
+        @media (max-width: 37.5em)  { @content ; }
+    }
+}

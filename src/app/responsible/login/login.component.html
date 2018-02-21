@@ -1,0 +1,24 @@
+<div class="login">
+  <div class="floating-container">
+    <div class="login-container">
+      <div class="header">
+          <span class="title">Pasqua Joven XXII</span>
+          <span class="subtitle">Página de responsables</span>
+        </div>
+        <div class="body">
+          <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmitForm(loginForm.value)">
+            <div class="form-item">
+                <label>Usuario</label>
+                <input formControlName="email"/></div>
+            <div class="form-item">
+              <label>Contraseña</label>  
+              <input type="password" formControlName="password"/>
+            </div>
+            <button [disabled]="!canSendForm">Acceder a la página</button>
+            <span class="form-message loading-message" *ngIf="pendingResponse">Cargando...</span>
+            <span class="form-message error-message" *ngIf="hasErrorMessage">{{errorFormMessage}}</span>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>

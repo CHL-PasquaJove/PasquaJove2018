@@ -7,9 +7,10 @@ import { RouterModule } from '@angular/router';
 
 import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
-import { SlidesModule } from './slides/slides.module';
-import { UserService } from './api/user.service';
-import { ContactService } from './api/contact.service';
+import { SlidesModule } from './slides';
+import { ResponsibleModule } from './responsible';
+import { UserService, ContactService, LoginService,
+         ApiErrorHelper} from './api';
 
 
 @NgModule({
@@ -22,9 +23,10 @@ import { ContactService } from './api/contact.service';
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
 
-    SlidesModule
+    SlidesModule,
+    ResponsibleModule
   ],
-  providers: [UserService, ContactService],
+  providers: [UserService, ContactService, LoginService, ApiErrorHelper],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

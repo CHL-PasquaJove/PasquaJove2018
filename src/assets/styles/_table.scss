@@ -1,0 +1,110 @@
+.responsive-table {
+    @include media('>=phablet') {
+        display: table;
+        border-spacing: 10px 15px;
+        table-layout: fixed;
+    
+        .table-header {
+            display: table-header-group;
+    
+            .table-cell {
+                color: $text-box-note-font-color;
+                font-weight: bold;
+                letter-spacing: -0.1px;
+                text-align: left;
+                padding-bottom: 5px;
+                border-bottom: 1px solid $text-box-note-font-color;
+                border-right: none;
+                cursor: pointer;
+
+                &.cell-number { width: 40px; }
+                &.cell-name { width: 10% }
+                &.cell-surname { width: 10% }
+                &.cell-age { width: 120px; }
+                &.cell-email { width: auto; }
+                &.cell-phone { width: 10% }
+                &.cell-group { width: 10% }
+                &.cell-invited-by { width: 10% }
+                &.cell-message { width: auto }
+            }
+        }
+    
+        .table-body {
+            display: table-row-group;
+        }
+    
+        .table-cell {
+            display: table-cell;
+            color: $medium-gray-font-color;
+            font-size: 15px;
+            border-right: 1px solid $dark-blue-font-color;
+            padding-right: 5px;
+
+            .sub-cell-name {
+                display: none;
+            }
+    
+            &.cell-dots .sub-cell-value {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+    
+            .sub-cell-value-extra {
+                display: none;
+            }
+        }
+    
+        .table-row {
+            display: table-row;
+        }
+
+        .table-cell-splitter {
+            display: none;
+        }
+    }
+
+    @include media('<phablet') {
+        display: flex;
+
+        .table-header {
+            display: none;
+        }
+
+        .table-body {
+            display: block;
+            width: 100%;
+
+        }
+
+        .table-row {
+            display: block;
+            width: 100%;
+            
+            .table-row-separator {
+                height: 1px;
+                width: 90px;
+                background-color: $medium-gray-blue-font-color;
+                margin: 20px 0;
+            }
+        }
+
+        .table-cell {
+            display: flex;
+            flex-direction: row;
+            color: $medium-gray-font-color;
+            font-size: 15px;
+
+            .sub-cell-name {
+                color: $text-box-note-font-color;
+                font-weight: bold;
+                letter-spacing: -0.1px;
+    
+                &::after {
+                    content: ': ';
+                    white-space: pre;                        
+                }
+            }
+        }
+    }
+}

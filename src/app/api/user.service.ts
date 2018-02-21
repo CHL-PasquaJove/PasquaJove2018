@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
 
 import { UserModel, ApiUser } from '../model/user.model';
-import { environment } from '../../environments/environment';
+import { BaseService } from './base.service';
 
 
 @Injectable()
-export class UserService {
-  public baseUrl = environment.apiBaseUrl;
-  constructor(private http: Http) { }
+export class UserService extends BaseService {
+  constructor(protected http: Http) {
+    super(http);
+  }
 
   public newUser(user: UserModel): Observable<UserModel> {
     const method = 'newUser';
@@ -26,16 +25,11 @@ export class UserService {
 
   public getUsers(): Observable<Array<UserModel>> {
     const method = 'getUsers';
-    const reqBody = {};
 
-    return this.doRequest(method, reqBody)
+    return this.doRequest(method)
             .map((res) => {
               const body: ApiUser[] = res.json();
               return body.map( (u) => (new UserModel().fromApi(u)) );
             });
-  }
-
-  private doRequest(method, reqBody) {
-    return this.http.post(`${this.baseUrl}/api/${method}`, reqBody);
   }
 }
