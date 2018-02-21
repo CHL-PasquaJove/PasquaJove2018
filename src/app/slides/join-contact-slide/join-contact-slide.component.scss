@@ -1,42 +1,21 @@
 @import '~assets/styles/styleColor';
 
 .join-contact-slide {
-  height: 100%;
-  position: relative;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+  flex: 1;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 
   .header-container {
-    height: 200px;
-    width: 100%;
-    background-image: url('/assets/images/forms-slide-background.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
+    flex: 0;
+    display: none;
   }
 
   .forms-container {
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+    flex: 1 1 170px;
     display: flex;
     .join-form,
     .contact-form {
-      display: -ms-flexbox;
-      display: -webkit-flex;
       display: flex;
-      -webkit-flex: 1 0 49%;
-      -ms-flex: 1 0 49%;
-      flex: 1 0 49%;
       flex-direction: column;
       text-align: center;
       justify-content: center;
@@ -47,19 +26,13 @@
       .collapsed-join-form,
       .collapsed-contact-form {
         cursor: pointer;
-        flex: 1 1 1;
+        flex: 1 0 auto;
+        justify-content: center;
         display: flex;
         flex-direction: column;
-        padding: 20px 0;
-        margin: 0 100px;
         span {
           display: block;
           padding: 0 20px;
-        }
-        &:hover {
-          color: $medium-gray-blue-font-color;
-          border-top: 1px solid $dark-blue-font-color;
-          border-bottom: 1px solid $dark-blue-font-color;
         }
       }
       .form-title {
@@ -75,21 +48,15 @@
       .expanded-join-form,
       .expanded-contact-form {
         display: flex;
-        margin: 15px auto;
-        overflow: auto;
       }
     }
     .forms-separator {
-      width: 50px;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
 
       .divider {
-        width: 2px;
         opacity: 0.5;
-        height: 25px;
         background-color: $medium-gray-blue-font-color;
       }
       span {
@@ -109,13 +76,10 @@
   }
 
   .footer-container {
-    height: 170px;
     background-color: $background-box-gray;
-    // bottom: 0;
     width: 100%;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
+    max-height: 170px;
+    flex: 0 1 170px;
     .horizontal-breadcrumb {
       display: flex;
       justify-content: center;
@@ -216,3 +180,79 @@
     }
   }
 }
+
+@media only screen and (max-width: 450px) {
+  .join-contact-slide {
+    .forms-container {
+      flex-direction: column;
+      .join-form,
+      .contact-form {
+        flex: 1 0 auto;
+        .expanded-join-form,
+        .expanded-contact-form {
+          justify-content: center;
+          align-items: center;
+          join-form,
+          contact-form {
+            width: 90%;
+          }
+        }
+      }
+      .forms-separator{
+        flex-direction: row;
+        .divider {
+          flex: 1 0 auto;
+          margin: 0 20px;
+          width: 25px;
+          height: 1px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 451px) {
+  .join-contact-slide {
+    .header-container {
+      height: 200px;
+      width: 100%;
+      background-image: url('/assets/images/forms-slide-background.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      flex: 0 1 auto;
+      display: flex;
+    }
+    .forms-container{
+      .join-form,
+      .contact-form {
+        flex: 1 0 49%;
+        .collapsed-join-form,
+        .collapsed-contact-form {
+          max-height: 180px;
+          margin: 0 100px;
+          padding: 20px 0;
+          &:hover {
+            color: $medium-gray-blue-font-color;
+            border-top: 1px solid $dark-blue-font-color;
+            border-bottom: 1px solid $dark-blue-font-color;
+          }
+        }
+        .expanded-join-form,
+        .expanded-contact-form {
+          margin: 15px auto;
+          overflow: auto;
+        }
+      }
+      .forms-separator{
+        flex-direction: column;
+        width: 50px;
+        .divider {
+          width: 2px;
+          height: 25px;
+        }
+      }
+    }
+  }
+}
+
