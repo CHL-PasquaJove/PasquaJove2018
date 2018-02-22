@@ -1,3 +1,28 @@
-<p>
-  messages works!
-</p>
+<div class="table-header">
+  <div class="table-row">
+    <div class="table-cell">Nº</div>
+    <div class="table-cell">Nombre</div>
+    <div class="table-cell">Correo</div>
+    <div class="table-cell">Mensaje</div>
+  </div>
+</div>
+<div class="table-body">
+  <div class="table-row" *ngFor="let contact of rf.contacts; let i = index">
+      <div class="table-cell">
+        <div class="sub-cell-name">Nº</div>
+        <div class="sub-cell-value">{{i + 1}}</div>
+      </div>
+      <div class="table-cell">
+        <div class="sub-cell-name">Nombre</div>
+        <div class="sub-cell-value">{{contact.name}}</div>
+      </div>
+      <div class="table-cell cell-dots">
+        <div class="sub-cell-name">Correo</div>
+        <div class="sub-cell-value">{{contact.email}}</div>
+      </div>
+      <div class="table-cell">
+        <div class="sub-cell-name">Mensaje</div>
+        <div class="sub-cell-value">{{contact.comment}}</div>
+      </div>
+  </div>
+</div>

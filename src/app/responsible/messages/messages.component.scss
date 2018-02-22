@@ -1,0 +1,24 @@
+@import '~assets/styles/global';
+
+
+$cell-number: 1;
+$cell-name: 2;
+$cell-email: 3;
+$cell-message: 4;
+
+@include responsibe-table-column($cell-number) {
+    flex: 0 0 40px;
+}
+@include responsibe-table-column($cell-name) {
+    flex: 0.5 0 40px;
+}
+@include responsibe-table-column($cell-email) {
+    flex: 1;
+}
+@include responsibe-table-column($cell-message) {
+    flex: 1;
+}
+
+.table-body .table-row .table-cell:last-child {
+    flex-direction: column;
+}
