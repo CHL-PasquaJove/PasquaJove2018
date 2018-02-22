@@ -1,1 +1,45 @@
 @import '~assets/styles/global';
+
+
+$cell-number: 1;
+$cell-name: 2;
+$cell-surname: 3;
+$cell-age: 4;
+$cell-email: 5;
+$cell-phone: 6;
+$cell-group: 7;
+$cell-invited-by: 8;
+$cell-message: 9;
+
+@include responsibe-table-column($cell-number) {
+    flex: 0 0 40px;
+}
+@include responsibe-table-column($cell-name) {
+    flex: 0.5 0 40px;
+}
+@include responsibe-table-column($cell-surname) {
+    flex: 0.5 0 40px;
+}
+@include responsibe-table-column($cell-age) {
+    flex: 0 0.5 120px;
+}
+@include responsibe-table-column($cell-email) {
+    flex: 1;
+}
+@include responsibe-table-column($cell-phone) {
+    flex: 0.5 0 40px;
+}
+@include responsibe-table-column($cell-group) {
+    flex: 0.5 0 40px;
+}
+@include responsibe-table-column($cell-invited-by) {
+    flex: 0.5 0 40px;
+}
+@include responsibe-table-column($cell-message) {
+    flex: 1;
+}
+
+.table-body .table-row .table-cell:last-child {
+    display: flex;
+    flex-direction: column;
+}

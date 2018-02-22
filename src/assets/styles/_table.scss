@@ -1,11 +1,10 @@
 .responsive-table {
-    @include media('>=phablet') {
-        display: table;
-        border-spacing: 10px 15px;
-        table-layout: fixed;
-    
+    @include media($responsibe-big-table-media) {
+        display: flex;
+        flex-direction: column;
+
         .table-header {
-            display: table-header-group;
+            display: block;
     
             .table-cell {
                 color: $text-box-note-font-color;
@@ -15,30 +14,24 @@
                 padding-bottom: 5px;
                 border-bottom: 1px solid $text-box-note-font-color;
                 border-right: none;
+                margin-top: 0px;
                 cursor: pointer;
-
-                &.cell-number { width: 40px; }
-                &.cell-name { width: 10% }
-                &.cell-surname { width: 10% }
-                &.cell-age { width: 120px; }
-                &.cell-email { width: auto; }
-                &.cell-phone { width: 10% }
-                &.cell-group { width: 10% }
-                &.cell-invited-by { width: 10% }
-                &.cell-message { width: auto }
             }
         }
     
         .table-body {
-            display: table-row-group;
+            display: block;
         }
     
         .table-cell {
-            display: table-cell;
+            display: block;
             color: $medium-gray-font-color;
             font-size: 15px;
             border-right: 1px solid $dark-blue-font-color;
             padding-right: 5px;
+            overflow: hidden;
+            margin-top: 15px;
+            flex: 1;
 
             .sub-cell-name {
                 display: none;
@@ -56,7 +49,12 @@
         }
     
         .table-row {
-            display: table-row;
+            display: flex;
+            flex-direction: row;
+
+            > .table-cell:not(:first-child) {
+                margin-left: 10px;
+            }
         }
 
         .table-cell-splitter {
@@ -64,7 +62,7 @@
         }
     }
 
-    @include media('<phablet') {
+    @include media($responsibe-small-table-media) {
         display: flex;
 
         .table-header {
@@ -75,6 +73,14 @@
             display: block;
             width: 100%;
 
+            .table-row::after {
+                content: "";
+                display: block;
+                height: 1px;
+                width: 90px;
+                background-color: $medium-gray-blue-font-color;
+                margin: 20px 0;
+            }
         }
 
         .table-row {
