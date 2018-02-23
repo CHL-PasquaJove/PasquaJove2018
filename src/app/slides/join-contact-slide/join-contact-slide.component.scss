@@ -80,7 +80,10 @@
     width: 100%;
     max-height: 170px;
     flex: 0 1 170px;
+    display: flex;
+    flex-direction: column;
     .horizontal-breadcrumb {
+      flex: 1 0 120px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -107,75 +110,79 @@
       }
     }
     .follow-container {
+      flex: 1 0 60px;
+      max-height: 60px;
       text-align: center;
       line-height: 30px;
       height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: $text-box-note-font-color;
       span {
         letter-spacing: -0.1px;
         font-size: 16px;
       }
-      .social-network {
-        color: $medium-gray-font-color;
-        cursor: pointer;
-        i {
-          font-weight: bold;
-        }
+      .icons-container {
+        .social-network {
+          color: $medium-gray-font-color;
+          cursor: pointer;
+          i {
+            font-weight: bold;
+          }
 
-        &:hover i {
-          color: $social-media-hover-color;
-        }
+          &:hover i {
+            color: $social-media-hover-color;
+          }
 
-        &:visited {
-          color: inherit;
+          &:visited {
+            color: inherit;
+          }
         }
       }
     }
     .bottom-footer {
-      .organized-by {
-        position: absolute;
-        bottom: 55px;
-        left: 10px;
-        font-size: 13px;
-        color: $text-box-note-font-color;
-      }
-      .cfl-logo {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        width: 150px;
+      flex: 1 0 60px;
+      max-height: 60px;
+      display: flex;
+      .organization-container {
+        .organized-by {
+          font-size: 13px;
+          color: $text-box-note-font-color;
+        }
+        .cfl-logo {
+          width: 150px;
+        }
       }
       .links-container {
-        position: absolute;
-        left: 175px;
-        bottom: 18px;
         font-size: 11px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
         .address {
           display: block;
           color: $text-box-note-font-color;
         }
-        .link,
-        .point-separator {
-          color: $medium-gray-blue-font-color !important;
-        }
-        .link {
-          &:hover {
-            color: $social-media-hover-color !important;
+        .url-container {
+          .link,
+          .point-separator {
+            color: $medium-gray-blue-font-color !important;
+          }
+          .link {
+            &:hover {
+              color: $social-media-hover-color !important;
+            }
           }
         }
       }
-      .design-by {
-        position: absolute;
-        bottom: 55px;
-        right: 10px;
-        font-size: 13px;
-        color: $text-box-note-font-color;
-      }
-      .hayaluz-logo {
-        width: 50px;
-        right: 10px;
-        bottom: 10px;
-        position: absolute;
+      .haya-luz-container {
+        .design-by {
+          font-size: 13px;
+          color: $text-box-note-font-color;
+        }
+        .hayaluz-logo {
+          width: 50px;
+        }
       }
     }
   }
@@ -206,6 +213,16 @@
           width: 25px;
           height: 1px;
         }
+      }
+    }
+    .footer-container {
+      .follow-container {
+        flex-direction: column;
+      }
+      .bottom-footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
@@ -250,6 +267,23 @@
         .divider {
           width: 2px;
           height: 25px;
+        }
+      }
+    }
+    .footer-container {
+      .follow-container {
+        flex: 1 0 40px;
+        max-height: 40px;
+        .icons-container{
+          margin-left: 10px;
+        }
+      }
+      .bottom-footer {
+        flex: 1 0 60px;
+        max-height: 60px;
+        .links-container {
+          margin-left: 10px;
+          justify-content: center;
         }
       }
     }
