@@ -77,20 +77,14 @@
 
   .footer-container {
     background-color: $background-box-gray;
-    width: 100%;
-    max-height: 170px;
-    flex: 0 1 170px;
     display: flex;
     flex-direction: column;
     .horizontal-breadcrumb {
-      flex: 1 0 120px;
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
       text-align: center;
-      line-height: 50px;
-      height: 50px;
       .breadcrumb-step {
         font-weight: bold;
         font-size: 11px;
@@ -220,6 +214,14 @@
       }
     }
     .footer-container {
+      align-items: center;
+      .horizontal-breadcrumb {
+        line-height: 20px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 90%;
+      }
       .follow-container {
         flex-direction: column;
       }
@@ -283,6 +285,12 @@
       }
     }
     .footer-container {
+      .horizontal-breadcrumb {
+        width: 100%;
+        line-height: 50px;
+        width: 100%;
+        flex: 1;
+      }
       .follow-container {
         flex: 1 0 40px;
         max-height: 40px;

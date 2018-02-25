@@ -188,7 +188,8 @@
     }
     .text-container {
       order: -1;
-      flex: 1 0 250px;
+      //flex: 1 0 250px;
+      flex: 1;
     }
   }
 }
