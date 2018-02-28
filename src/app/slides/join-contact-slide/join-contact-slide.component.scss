@@ -189,6 +189,10 @@
       .join-form,
       .contact-form {
         flex: 1 0 auto;
+        .collapsed-join-form,
+        .collapsed-contact-form {
+          min-height: 200px;
+        }
         .expanded-join-form,
         .expanded-contact-form {
           justify-content: center;
@@ -256,10 +260,12 @@
       display: flex;
     }
     .forms-container {
-      flex: 1 1 170px;
+      // flex: 1 1 170px;
+      flex: 1;
       .join-form,
       .contact-form {
-        flex: 1 0 49%;
+        // flex: 1 0 49%;
+        flex: 1;
         .collapsed-join-form,
         .collapsed-contact-form {
           max-height: 180px;

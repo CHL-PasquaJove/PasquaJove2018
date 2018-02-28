@@ -46,7 +46,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 20%;
     &.no-active{
         flex: 0;
     }
@@ -72,51 +71,41 @@
     }
     .add-ons {
         display: flex;
-        margin-top: 15px;
         .document-container,
         .contact-container {
             flex: 1 0 49%;
             label {
-                font-size: 14px;
+                font-size: 16px;
             }
             .button {
                 width: 200px;
             }
         }
-        .document-container {
-            text-align: right;
-            margin-right: 20px;
-        }
         .separator {
-            width: 50px;
             display: flex;
-            flex-direction: column;
             justify-content: center;
+            align-items: center;
             .divider {
-                width: 2px;
-                margin: 0 auto;
-                height: 25px;
+                opacity: 0.5;
                 background-color: $medium-gray-blue-font-color;
             }
             span {
                 font-size: 25px;
                 height: 30px;
                 line-height: 22px;
-                font-weight: 900;
+                font-weight: 600;
                 color: $text-box-note-font-color;
-                display: block;
-                text-align: center;
             }
         }
         .contact-container {
             text-align: left;
-            margin-left: 20px;
         }
     }
 }
 
 @media screen and (max-width: 450px) {
     .form-fields {
+        margin-top: 10px;
         display: flex;
         flex-direction: column;
         .title {
@@ -149,6 +138,42 @@
             }
         }
     }
+    .join-form-success {
+        margin-top: 10px;
+        align-items: flex-start;
+        text-align: left;
+        .add-ons{
+            margin-top: 10px;
+            flex-direction: column;
+            .line-separator {
+                height: 2px;
+                width: 91px;
+                margin-bottom: 10px;
+                background-color: $medium-gray-blue-font-color;
+            }
+            .document-container{
+                text-align: left;
+                margin-bottom: 10px;
+            }
+            .separator {
+                flex-direction: row;
+                .divider {
+                    flex: 1 0 auto;
+                    width: 25px;
+                    height: 1px;
+                    &.divider-one {
+                        margin: 0 20px 0 0;
+                    }
+                    &.divider-two {
+                        margin: 0 0 0 20px;
+                    }
+                }
+            }
+            .contact-container {
+                text-align: left;
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 451px) {
@@ -174,6 +199,28 @@
         }
         .button {
             width: 200px;
+        }
+    }
+    .join-form-success {
+        padding: 0 20%;
+        .add-ons {
+            margin-top: 15px;
+            .document-container {
+                text-align: right;
+                margin-right: 20px;
+            }
+            .separator {
+                flex-direction: column;
+                width: 50px;
+                .divider {
+                    width: 2px;
+                    height: 25px;
+                }
+            }
+            .contact-container {
+                text-align: left;
+                margin-left: 20px;
+            }
         }
     }
 }
